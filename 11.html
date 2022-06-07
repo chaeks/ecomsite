@@ -123,7 +123,8 @@
                 //  for variable choice start
                 var testVal = "test";
                 testVal = document.getElementById("pid").value;
-                console.log(testVal)
+                // console.log(testVal)
+                
                 //v12
                 // document.getElementById("pid").value = test;
                 alert(test);
@@ -167,8 +168,11 @@
                         // "displayToAgent": true
                         // }, {
                         "label": "pChoice",
-                        "value": testVal,
+                        // "value"= testVal,
                         "displayToAgent": true}];
+
+                        embedded_svc.settings.extraPrechatFormDetails.value = testVal;
+
 
                         // "value": "bdibdie53",
 
