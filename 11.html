@@ -121,8 +121,9 @@
             <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
             <script type='text/javascript'>
                 //  for variable choice start
-                var test = "test";
-                test = document.getElementById("pid");
+                var testVal = "test";
+                testVal = document.getElementById("pid");
+                console.log(testVal)
                 //v12
                 // document.getElementById("pid").value = test;
                 alert(test);
@@ -166,8 +167,10 @@
                         // "displayToAgent": true
                         // }, {
                         "label": "pChoice",
-                        "value": "bdibdie53",
+                        "value": testVal,
                         "displayToAgent": true}];
+
+                        // "value": "bdibdie53",
 
                         // embedded_svc.settings.extraPrechatInfo = [{
                         //     "entityFieldMaps": [{
