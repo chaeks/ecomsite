@@ -25,7 +25,7 @@ $ git add .
 ckkus@DESKTOP-UDT8AET MINGW64 ~/Desktop/swiggyFood (main)
 $ git status
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is up to date with 'origin/maingit sta'.
 
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
