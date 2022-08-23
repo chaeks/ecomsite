@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .g-recaptcha {
+            position: relative;
+            width: 100%;
+            background: #f9f9f9;
+            overflow: hidden;
+        }
+        
+        .g-recaptcha > * {
+            float: right;
+            right: 0;
+            margin: -2px -2px -10px;/*remove borders*/ 
+        }
+        
+        .g-recaptcha::after{
+            display: block;
+            content: "";
+            position: absolute;
+            left:0;
+            right:150px;
+            top: 0;
+            bottom:0;
+            background-color: #f9f9f9;
+            clear: both;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6Lf0G5ggAAAAAPyWku9pibI9R-px1Ms8xL6AToOI"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
