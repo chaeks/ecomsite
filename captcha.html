@@ -2,12 +2,18 @@
   <head>
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function setValue(){
+        console.log('clicked.........');
+
+      }
+    </script>
   </head>
-  <body>
+  <body onclick="setValue()">
     <form action="?" method="POST">
       <div class="g-recaptcha" data-sitekey="6Lf0G5ggAAAAAPyWku9pibI9R-px1Ms8xL6AToOI"></div>
       <br/>
       <input type="submit" value="Submit">
     </form>
   </body>
-</html>
+</html>a
