@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> CSS Sonar Wave Effect in Circle </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+    body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+    .circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 150px auto;
+    }
+    .wave{
+    position: relative;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2d3436;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    animation:Waveeffects 4s linear infinite;
+    }
+    @keyframes Waveeffects {
+        0% {opacity: 0.4;}
+        25%{opacity: 0.2;}
+        50% {opacity: 0;transform: scale(2);}
+        75%{opacity: 0.2;}
+        100%{opacity: 0.4;}
+    }
+    
+    @media(max-width: 500px){
+    .circle{
+    height: 150px;
+    width: 150px;
+    }
+    .wave{
+    height: 150px;
+    width: 150px;
+    }
+    }
+</style>
+</head>
+<body>
+<div class="circle">
+<div class="wave"></div>
+</div>
+</body>
+</html>
