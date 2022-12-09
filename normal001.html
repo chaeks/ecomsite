@@ -302,7 +302,23 @@
         <div class="circle">
             <div class="wave"></div>
         </div>
+    <a id="liveagent_button_online_5735g000000gS92" href="javascript://Chat" style="display: block;" onclick="liveagent.startChat('5735g000000gS92')">
+        Online Chat Content 
+        </a>
+        <div id="liveagent_button_offline_5735g000000gS92" style="display: block;">
+        Offline Chat Content
+        </div>
+      
     </body>
+    <script type="text/javascript">
+        if (!window._laq) {
+          window._laq = []; 
+        }
+        window._laq.push(function(){
+          liveagent.showWhenOnline('5735g000000gS92', 		  document.getElementById('liveagent_button_online_5735g000000gS92'));
+          liveagent.showWhenOffline('5735g000000gS92', document.getElementById('liveagent_button_offline_5735g000000gS92'));
+        });
+      </script>
     <script>
     window.addEventListener("message", function(event) {
         if (event.data.name === "CountOfAgent") {
