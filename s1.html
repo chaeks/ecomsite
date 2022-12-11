@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<style type='text/css'>
+    
+    .icon-bar {
+    position: fixed;
+    top: 50%;
+    right :1%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+   
+    }
+    .icon-bar a {
+    display: block;
+    text-align: center;
+    
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    
+    border-radius: 50%;
+    min-width: 3.2em;
+    width: 60px !important;
+    height:60px !important;
+    }
+    
+    .icon-bar a:hover {
+    background-color: #000;
+    }
+    
+    .facebook {
+    background: #3B5998;
+    color: white;
+    }
+    
+    
+    .embeddedServiceHelpButton .helpButton .uiButton {
+    font-family: "Arial", sans-serif;
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    min-width: 5em;
+    z-index:2000;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
+    top:45px;
+    right:65px;
+    }
+    
+    .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
+    margin: auto;
+    }
+    .embeddedServiceHelpButton .embeddedServiceIcon::before {
+    font-size: 2.5em;
+    display: block;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: 1px solid #FFBA00;
+    min-width: 5em;
+    border-radius: 50%;
+    }
+    .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+    
+    font-family: "Arial", sans-serif;
+    border-radius: 50%;
+    min-width: 3.2em;
+    width: 60px !important;
+    height:60px !important;
+    }
+    
+    .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
+    display: none;
+    }
+    .embeddedServiceSidebarMinimizedDefaultUI .content{
+    padding:0 0px;
+    }
+    
+    .embeddedServiceSidebarMinimizedDefaultUI{
+    width: 60px !important;
+    height:60px  !important;
+    border-radius: 10%;
+    min-width: 7em;
+    }
+    .message{
+    padding: 1px 1px 1px 1px;
+    margin: 0px 0px;
+    border-style: none;
+    display : block;
+    }
+    .embeddedServiceIcon svg {
+    font-size: 2.2em !important;
+    }
+    .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
+    min-width: 3.2em;
+    }
+    
+    .cEShop_PreChat input.slds-input {
+    font-size: 13px !important;
+    border-radius: 4px !important;
+    padding: 0 12px 0 16px !important;
+    line-height: 30px !important;
+    width: 90% !important;
+    }
+    .cEShop_PreChat select.select {
+    font-size: 13px !important;
+    height: 32px !important;
+    }
+    
+    .embeddedServiceHelpButton {
+    z-index: 1001;        
+    }
+    .embeddedServiceHelpButton .helpButton {
+    bottom: 14% !important;
+    width: 60px !important;
+    height:60px  !important;
+    }
+    .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+    bottom: 14% !important;
+    width: 60px !important;
+    height:60px  !important;
+    }
+    .embeddedServiceSidebarMinimizedDefaultUI{
+    bottom: 14% !important;
+    width: 60px !important;
+    height:60px  !important;
+    }
+    .circle{
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #000;
+}
+.wave{
+position: relative;
+text-align: center;
+top: 0;
+right: 0;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #2d3436;
+opacity: 0;
+z-index: -1;
+pointer-events: none;
+animation:Waveeffects 4s linear infinite;
+}
+@keyframes Waveeffects {
+    0% {opacity: 0.4;}
+    25%{opacity: 0.2;}
+    50% {opacity: 0;transform: scale(2);}
+    75%{opacity: 0.2;}
+    100%{opacity: 0.4;}
+}
+
+@media(max-width: 500px){
+.circle{
+height: 150px;
+width: 150px;
+}
+.wave{
+height: 150px;
+width: 150px;
+}
+}
+    
+    @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+    
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = false; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+        
+        //embedded_svc.settings.defaultMinimizedText  = 'Chat'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = 'Chat'; //(Defaults to Agent Offline)
+        
+        //embedded_svc.settings.loadingText = 'Loading'; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+        
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+        // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+        // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+        
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+        embedded_svc.settings.widgetHeight     = '520px';
+        embedded_svc.settings.autoOpenPostChat = true;
+        
+
+        embedded_svc.addEventHandler("onHelpButtonClick", function(data) {
+        console.log("On Click Chat icon event was fired.");
+        });
+        
+        embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
+        console.log("On Click Start Chat Button event was fired.");
+        });
+        
+        embedded_svc.addEventHandler("onChatEstablished", function(data) {
+            const varStyle=document.getElementsByClassName("minimizedText");
+            varStyle[0].style.display='block';
+            console.log("On Chat Established event was fired.");
+        });
+        
+        embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
+        console.log("On ChatTransferSuccessfulToLiveAgent event was fired.");
+        });
+        
+        embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
+            console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+        });
+        
+        embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
+            console.log("onChatEndedByAgent event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+        });
+        
+        embedded_svc.addEventHandler("onAgentMessage", function(data) {
+            const varStyle=document.getElementsByClassName("minimizedText");
+            varStyle[0].style.display='block';
+            console.log("onAgentMessage event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+        });
+        embedded_svc.addEventHandler("onChatEndedByChatbot", function(data) {
+        console.log("onChatEndedByChatbot event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
+        });        
+        
+        embedded_svc.addEventHandler("afterMinimize", function(data) {
+        console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
+        }); 
+        
+        embedded_svc.addEventHandler("afterMaximize", function(data) {
+        console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
+        }); 
+        
+        embedded_svc.addEventHandler("afterDestroy", function(data) {
+            const varStyle=document.getElementsByClassName("embeddedServiceIcon");
+            varStyle[0].style.display='block';
+            console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
+        }); 
+        
+            
+        embedded_svc.init(
+        'https://tcscom-fc-dev-ed.my.salesforce.com',
+        'https://ckush-developer-edition.ap24.force.com',
+        gslbBaseURL,
+        '00D5g000004G0mx',
+        'Chat_agents',
+        {
+            baseLiveAgentContentURL: 'https://c.la2-c1-hnd.salesforceliveagent.com/content',
+            deploymentId: '5725g000000gOqj',
+            buttonId: '5735g000000gS92',
+            baseLiveAgentURL: 'https://d.la2-c1-hnd.salesforceliveagent.com/chat',
+            eswLiveAgentDevName: 'Chat_agents',
+            isOfflineSupportEnabled: false
+        }
+    );
+};
+
+if (!window.embedded_svc) {
+    var s = document.createElement('script');
+    s.setAttribute('src', 'https://tcscom-fc-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.onload = function() {
+        initESW(null);
+    };
+    document.body.appendChild(s);
+} else {
+    initESW('https://service.force.com');
+}
+</script>
+<body>
+    iFrame1 :
+    <iframe src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" 
+            style="display: none;"></iframe>
+    <p id="test">100</p>
+    <script type='text/javascript'>
+    function bootstrapChat() {
+        embedded_svc.bootstrapEmbeddedService();
+        console.log('bobot');
+    }
+    </script>
+    <div style="position : relative;left : 90%;top  :80%;">XYZ</div>
+    <button class ="circle" style = "font-family: 'Arial', sans-serif;width: 60px;height:60px;border-radius: 50%;min-width: 5em;z-index:2000;bottom: 14% !important;width: 60px !important;height:60px  !important;">
+        <img src = "https://clipground.com/images/a-person-clipart-7.jpg" 
+                class= "circle" onclick="bootstrapChat()" 
+                style = "font-family: 'Arial', sans-serif;width: 60px;height:60px;border-radius: 50%;min-width: 5em;z-index:2000;bottom: 14% !important;width: 60px !important;height:60px  !important;" />
+    </button>
+    
+    <div class="icon-bar" onclick="bootstrapChat()" >
+        xyxyd
+    
+        <a href="#" class="facebook"><i class="fa-solid fa-user-robot"></i></a> 
+    </div>
+    <button onclick="bootstrapChat()">
+        Click me to show the Embedded Chat experience.
+    </button>
+    
+    <div class="circle">
+        <div class="wave"></div>
+    </div>
+</body>
+<script>
+window.addEventListener("message", function(event) {
+    if (event.data.name === "CountOfAgent") {
+        receivedFilledValue = event.data.payload;
+        console.log('from VFP******'+ receivedFilledValue);   
+        document.getElementById('test').innerHTML = receivedFilledValue ;
+        
+        if(receivedFilledValue == 0 ){
+            console.log('elseeee');
+            
+        }
+    }
+}, false);
+</script>
+
+</body>
+</html>
