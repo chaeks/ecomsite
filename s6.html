@@ -192,6 +192,8 @@
             embedded_svc.addEventHandler("afterDestroy", function(data) {
                 const varStyle=document.getElementsByClassName("embeddedServiceIcon");
                 varStyle[0].style.display='block';
+
+                document.querySelector('.circle').style = "display : block";
                 console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
             }); 
             
