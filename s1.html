@@ -310,11 +310,7 @@ if (!window.embedded_svc) {
                 style = "font-family: 'Arial', sans-serif;width: 60px;height:60px;border-radius: 50%;min-width: 5em;z-index:2000;bottom: 14% !important;width: 60px !important;height:60px  !important;" />
     </button>
     
-    <div class="icon-bar" onclick="bootstrapChat()" >
-        xyxyd
-    
-        <a href="#" class="facebook"><i class="fa-solid fa-user-robot"></i></a> 
-    </div>
+    <div class="icon-bar" onclick="bootstrapChat()" ></div>
     <button onclick="bootstrapChat()">
         Click me to show the Embedded Chat experience.
     </button>
@@ -324,18 +320,18 @@ if (!window.embedded_svc) {
     </div>
 </body>
 <script>
-window.addEventListener("message", function(event) {
-    if (event.data.name === "CountOfAgent") {
-        receivedFilledValue = event.data.payload;
-        console.log('from VFP******'+ receivedFilledValue);   
-        document.getElementById('test').innerHTML = receivedFilledValue ;
-        
-        if(receivedFilledValue == 0 ){
-            console.log('elseeee');
+    window.addEventListener("message", function(event) {
+        if (event.data.name === "CountOfAgent") {
+            receivedFilledValue = event.data.payload;
+            console.log('from VFP******'+ receivedFilledValue);   
+            document.getElementById('test').innerHTML = receivedFilledValue ;
             
+            if(receivedFilledValue == 0 ){
+                console.log('elseeee');
+                
+            }
         }
-    }
-}, false);
+    }, false);
 </script>
 
 </body>

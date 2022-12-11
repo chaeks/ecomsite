@@ -1,0 +1,193 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type='text/css'>
+    
+        .icon-bar {
+        position: fixed;
+        top: 50%;
+        right :1%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+       
+        }
+        .icon-bar a {
+        display: block;
+        text-align: center;
+        
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+        
+        border-radius: 50%;
+        min-width: 3.2em;
+        width: 60px !important;
+        height:60px !important;
+        }
+        
+        .icon-bar a:hover {
+        background-color: #000;
+        }
+        
+        .facebook {
+        background: #3B5998;
+        color: white;
+        }
+        
+        
+        .embeddedServiceHelpButton .helpButton .uiButton {
+        font-family: "Arial", sans-serif;
+        width: 60px;
+        height:60px;
+        border-radius: 50%;
+        min-width: 5em;
+        z-index:2000;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
+        top:45px;
+        right:65px;
+        }
+        
+        .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
+        margin: auto;
+        }
+        .embeddedServiceHelpButton .embeddedServiceIcon::before {
+        font-size: 2.5em;
+        display: block;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #FFBA00;
+        min-width: 5em;
+        border-radius: 50%;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+        
+        font-family: "Arial", sans-serif;
+        border-radius: 50%;
+        min-width: 3.2em;
+        width: 60px !important;
+        height:60px !important;
+        }
+        
+        .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
+        display: none;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI .content{
+        padding:0 0px;
+        }
+        
+        .embeddedServiceSidebarMinimizedDefaultUI{
+        width: 60px !important;
+        height:60px  !important;
+        border-radius: 10%;
+        min-width: 7em;
+        }
+        .message{
+        padding: 1px 1px 1px 1px;
+        margin: 0px 0px;
+        border-style: none;
+        display : block;
+        }
+        .embeddedServiceIcon svg {
+        font-size: 2.2em !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
+        min-width: 3.2em;
+        }
+        
+        .cEShop_PreChat input.slds-input {
+        font-size: 13px !important;
+        border-radius: 4px !important;
+        padding: 0 12px 0 16px !important;
+        line-height: 30px !important;
+        width: 90% !important;
+        }
+        .cEShop_PreChat select.select {
+        font-size: 13px !important;
+        height: 32px !important;
+        }
+        
+        .embeddedServiceHelpButton {
+        z-index: 1001;        
+        }
+        .embeddedServiceHelpButton .helpButton {
+        bottom: 14% !important;
+        width: 60px !important;
+        height:60px  !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+        bottom: 14% !important;
+        width: 60px !important;
+        height:60px  !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI{
+        bottom: 14% !important;
+        width: 60px !important;
+        height:60px  !important;
+        }
+        .circle{
+         width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #000;
+        }
+    
+        @media(max-width: 500px){
+        .circle{
+        height: 150px;
+        width: 150px;
+        }  
+    </style>
+    
+</head>
+<body>
+
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true; //Or false
+            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+    
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+    
+            embedded_svc.init(
+                'https://tcscom-fc-dev-ed.my.salesforce.com',
+                'https://ckush-developer-edition.ap24.force.com/eShopExternalSite',
+                gslbBaseURL,
+                '00D5g000004G0mx',
+                'Chat_agents',
+                {
+                    baseLiveAgentContentURL: 'https://c.la2-c1-hnd.salesforceliveagent.com/content',
+                    deploymentId: '5725g000000gOqj',
+                    buttonId: '5735g000000gS92',
+                    baseLiveAgentURL: 'https://d.la2-c1-hnd.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'Chat_agents',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+    
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://tcscom-fc-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
+
+    <button onclick="bootstrapChat()">
+        Click me to show the Embedded Chat experience.
+    </button>
+
+</body>
+</html>
