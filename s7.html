@@ -223,8 +223,7 @@
             }
 
             var environment = "xyz";  // for testing only
-            if (environment == "xyz"){
-                window.addEventListener("message", function(event) {
+            window.addEventListener("message", function(event) {
                     if (event.data.name === "CountOfAgent") {
                         receivedFilledValue = event.data.payload;
                         console.log('from VFP******'+ receivedFilledValue);
@@ -243,7 +242,7 @@
                         }
                     }
                 }, false);
-            }
+            
             
             function refreshIframe(){
                 const iframe = document.getElementById("iframeId");
