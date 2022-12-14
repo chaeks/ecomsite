@@ -182,20 +182,32 @@
             
             embedded_svc.addEventHandler("afterMinimize", function(data) {
                 console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
+                //EMC-54 Start
+                document.querySelector('#onlineImage').style="display : none;";
+                document.querySelector('#offlineImage').style="display : none;";
+                minimizeFlag = true;
+                //EMC-54 End
             }); 
             
             embedded_svc.addEventHandler("afterMaximize", function(data) {
-                document.querySelector('.circle').style = "display : none";
-
                 console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
+                //EMC-54 Start
+                document.querySelector('#onlineImage').style="display : none;";
+                document.querySelector('#offlineImage').style="display : none;";
+                minimizeFlag = true;
+                //EMC-54 End
             }); 
             
             embedded_svc.addEventHandler("afterDestroy", function(data) {
                 const varStyle=document.getElementsByClassName("embeddedServiceIcon");
                 varStyle[0].style.display='block';
 
-                document.querySelector('.circle').style = "display : inline";
                 console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
+                //EMC-54 Start
+                minimizeFlag = false; 
+                //call refresh Iframe for current status of Agent
+                refreshIframe();
+                //EMC-54 End
             }); 
             
     
@@ -226,40 +238,62 @@
         } else {
             initESW('https://service.force.com');
         }
-    </script>
-    <script type='text/javascript'>
+        var environment = "xyz";  // for testing only
+        if ((environment == "xyz") ){
+            window.addEventListener("message", function(event) {
+                if (event.data.name === "CountOfAgent") {
+                    receivedFilledValue = event.data.payload;
+                    console.log('from VFP******'+ receivedFilledValue);
+                    console.log('minimizeFlag0000 : '+minimizeFlag);
+                    if(receivedFilledValue >0 && !minimizeFlag ){
+                        console.log('ifCOn');
+                        setTimeout(agentOnline, 5000);
+                    }
+                    else if(receivedFilledValue == 0 && !minimizeFlag ){ 
+                        console.log('elseeee');
+                        setTimeout(agentOffline, 5000);
+                    }
+                    if (!minimizeFlag){
+                        setTimeout(refreshIframe,15000);
+                        console.log('iframe refresh called');
+                    }
+                }
+            }, false);
+        }
+        function refreshIframe(){
+            const iframe = document.getElementById("iframeId");
+            iframe.contentWindow.location.reload();
+            console.log('iframe refreshed');
+        }
+        function agentOffline(){
+            document.querySelector('#onlineImage').style="display : none;";
+            document.querySelector('#offlineImage').style="display : inline;";
+            console.log('offline method');
+        }
+        
+        function agentOnline(){
+            document.querySelector('#offlineImage').style="display : none;";
+            document.querySelector('#onlineImage').style="display : inline;";
+            console.log('online method');
+        }
         function bootstrapChat() {
             embedded_svc.bootstrapEmbeddedService();
-            console.log('bobot');
+            console.log('bootstrap method call');
         }
-        window.addEventListener("message", function(event) {
-            if (event.data.name === "CountOfAgent") {
-                receivedFilledValue = event.data.payload;
-                console.log('from VFP******'+ receivedFilledValue);   
-                document.getElementById('test').innerHTML = receivedFilledValue ;
-                
-                if(receivedFilledValue == 0 ){
-                    console.log('elseeee');
-                    
-                }
-            }
-        }, false);
     </script>
 
-    <iframe src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" ></iframe>
+    <iframe id="iframeId" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" ></iframe>
     <p id="test">100</p>
 
     
   <div class="icon-bar">
-    <img src = "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/ChatBot" 
-                 onclick="bootstrapChat()" 
-                 style = "width: 60px;height:60px; border-radius : 50%;box-shadow:0 0 12px 0 rgb(0 0 0 / 50%)" />
-    <img src = "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
-                 onclick="bootstrapChat()" 
-                 style = "width: 60px;height:60px; border-radius : 50%;box-shadow:0 0 12px 0 rgb(0 0 0 / 50%)"/>
-    <img src = "https://peugeot--c.um9.content.force.com/servlet/servlet.ImageServer?id=0154H000005jXwj&oid=00D24000000b65s&lastMod=1630595674000" 
-                 onclick="bootstrapChat()" 
-                 class = "circle"/>
+
+    <div class = "icon-bar" >
+        <img id="onlineImage" src= "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
+                onclick="bootstrapChat()" class="circle" style="display:none;" />
+        <img id="offlineImage" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/ChatBot" 
+                onclick="bootstrapChat()" class="circle" style="display:none;" />
+    </div>
                  
   </div>
 </body>
