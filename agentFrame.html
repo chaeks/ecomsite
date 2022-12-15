@@ -13,6 +13,8 @@
             receivedFilledValue = event.data.payload;
             console.log('frame received value *'+ receivedFilledValue);   
             document.getElementById('test').innerHTML = receivedFilledValue ;
+            parent.postMessage(receivedFilledValue, parent.origin);
+            console.log('parent origin :'+parent.origin);
         }
     }, false);
     </script>
