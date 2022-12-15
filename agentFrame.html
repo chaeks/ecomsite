@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+        agentFrame :
+        <iframe src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" ></iframe>
+    
+        <p id="test">100</p>
+    </body>
+    <script>
+    window.addEventListener("message", function(event) {
+        if (event.data.name === "CountOfAgent") {
+            receivedFilledValue = event.data.payload;
+            console.log('frame received value *'+ receivedFilledValue);   
+            document.getElementById('test').innerHTML = receivedFilledValue ;
+        }
+    }, false);
+    </script>
+</html>
