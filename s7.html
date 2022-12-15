@@ -119,9 +119,9 @@
     <body>
         <script type='text/javascript'>
             var minimizeFlag = false;
-            document.getElementById
+            
         </script>
-        <iframe id="iframeId" src="https://chaeks.github.io/ecomsite/agentFrame" ></iframe>
+        <iframe id="iframeId" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" ></iframe>
         
 
         <div class = "icon-bar" >
@@ -178,31 +178,28 @@
                     
                     embedded_svc.addEventHandler("afterMinimize", function(data) {
                     console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
-                        //EMC-54 Start
+                       
                         document.querySelector('#onlineImage').style="display : none;";
                         document.querySelector('#offlineImage').style="display : none;";
                         minimizeFlag = true;
-                        //EMC-54 End
+                      
                     }); 
                     
                     embedded_svc.addEventHandler("afterMaximize", function(data) {
                     console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
-                        //EMC-54 Start
+                        
                         document.querySelector('#onlineImage').style="display : none;";
                         document.querySelector('#offlineImage').style="display : none;";
                         minimizeFlag = true;
-                        //EMC-54 End
+                     
                     }); 
                     
                     embedded_svc.addEventHandler("afterDestroy", function(data) {
                      const varStyle=document.getElementsByClassName("embeddedServiceIcon");
                      varStyle[0].style.display='block';
                      console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
-                        //EMC-54 Start
                         minimizeFlag = false; 
-                        //call refresh Iframe for current status of Agent
                         refreshIframe();
-                        //EMC-54 End
                     }); 
         
 
@@ -252,6 +249,7 @@
                             setTimeout(refreshIframe,15000);
                             console.log('iframe refresh called');
                         }
+
                     }
                 }, false);
             </script>
