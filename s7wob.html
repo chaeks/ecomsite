@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style type='text/css'>
+            .icon-bar {
+            position: fixed;
+            top: 82%;
+            right :12px;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            }
+
+            .embeddedServiceHelpButton .helpButton .uiButton {
+            font-family: "Arial", sans-serif;
+            width: 60px;
+            height:60px;
+            border-radius: 50%;
+            min-width: 5em;
+            z-index:2000;
+            }
+            .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
+            top:45px;
+            right:65px;
+            }
+            .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
+            margin: auto;
+            }
+            .embeddedServiceHelpButton .embeddedServiceIcon::before {
+            font-size: 2.5em;
+            display: block;
+            }
+            .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #FFBA00;
+            min-width: 5em;
+            border-radius: 50%;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+            font-family: "Arial", sans-serif;
+            border-radius: 50%;
+            min-width: 3.2em;
+            width: 60px !important;
+            height:60px !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
+            display: none;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI .content{
+            padding:0 0px;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI{
+            width: 60px !important;
+            height:60px  !important;
+            border-radius: 10%;
+            min-width: 7em;
+            }
+            .message{
+            padding: 1px 1px 1px 1px;
+            margin: 0px 0px;
+            border-style: none;
+            display : block;
+            }
+            .embeddedServiceIcon svg {
+            font-size: 2.2em !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
+            min-width: 3.2em;
+            }
+            .cEShop_PreChat input.slds-input {
+            font-size: 13px !important;
+            border-radius: 4px !important;
+            padding: 0 12px 0 16px !important;
+            line-height: 30px !important;
+            width: 90% !important;
+            }
+            .cEShop_PreChat select.select {
+            font-size: 13px !important;
+            height: 32px !important;
+            }
+            .embeddedServiceHelpButton {
+            z-index: 1001;        
+            }
+            .embeddedServiceHelpButton .helpButton {
+            bottom: 14% !important;
+            width: 60px !important;
+            height:60px  !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+            bottom: 14% !important;
+            width: 60px !important;
+            height:60px  !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI{
+            bottom: 14% !important;
+            width: 60px !important;
+            height:60px  !important;
+            }
+            .circle{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow:0 0 12px 0 rgb(0 0 0 / 50%);
+            }
+            @media(max-width: 500px){
+            .circle{
+            height: 60px;
+            width: 60px;
+            bottom : 14%;
+            box-shadow:0 0 12px 0 rgb(0 0 0 / 50%);
+            }  }
+        </style>
+    </head>
+    
+        <script type='text/javascript'>
+            var minimizeFlag = false;
+            
+        </script>
+        
+        
+        <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+        <script type='text/javascript'>
+            var initESW = function(gslbBaseURL) {
+                embedded_svc.settings.displayHelpButton = false; //Or false
+                embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+                embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                embedded_svc.settings.entryFeature = 'LiveAgent';
+
+                embedded_svc.addEventHandler("onHelpButtonClick", function(data) {
+                    console.log("On Click Chat icon event was fired.");
+                    });
+                    
+                    embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
+                    console.log("On Click Start Chat Button event was fired.");
+                    });
+                    
+                    embedded_svc.addEventHandler("onChatEstablished", function(data) {
+                        const varStyle=document.getElementsByClassName("minimizedText");
+                        varStyle[0].style.display='block';
+                        console.log("On Chat Established event was fired.");
+                    });
+                    
+                    embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
+                    console.log("On ChatTransferSuccessfulToLiveAgent event was fired.");
+                    });
+                    
+                    embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
+                        console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                    });
+                    
+                    embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
+                        console.log("onChatEndedByAgent event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                    });
+                    
+                    embedded_svc.addEventHandler("onAgentMessage", function(data) {
+                        const varStyle=document.getElementsByClassName("minimizedText");
+                        varStyle[0].style.display='block';
+                        console.log("onAgentMessage event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                    });
+                    embedded_svc.addEventHandler("onChatEndedByChatbot", function(data) {
+                    console.log("onChatEndedByChatbot event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
+                    });        
+                    
+                    embedded_svc.addEventHandler("afterMinimize", function(data) {
+                    console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
+                       
+                        document.querySelector('#onlineImage').style="display : none;";
+                        document.querySelector('#offlineImage').style="display : none;";
+                        minimizeFlag = true;
+                      
+                    }); 
+                    
+                    embedded_svc.addEventHandler("afterMaximize", function(data) {
+                    console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
+                        
+                        document.querySelector('#onlineImage').style="display : none;";
+                        document.querySelector('#offlineImage').style="display : none;";
+                        minimizeFlag = true;
+                     
+                    }); 
+                    
+                    embedded_svc.addEventHandler("afterDestroy", function(data) {
+                     const varStyle=document.getElementsByClassName("embeddedServiceIcon");
+                     varStyle[0].style.display='block';
+                     console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
+                        minimizeFlag = false; 
+                        refreshIframe();
+                    }); 
+        
+
+                embedded_svc.init(
+                    'https://tcscom-fc-dev-ed.my.salesforce.com',
+                    'https://ckush-developer-edition.ap24.force.com/eShopExternalSite',
+                    gslbBaseURL,
+                    '00D5g000004G0mx',
+                    'Chat_agents',
+                    {
+                        baseLiveAgentContentURL: 'https://c.la2-c1-hnd.salesforceliveagent.com/content',
+                        deploymentId: '5725g000000gOqj',
+                        buttonId: '5735g000000gS92',
+                        baseLiveAgentURL: 'https://d.la2-c1-hnd.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'Chat_agents',
+                        isOfflineSupportEnabled: false
+                    }
+                );
+            };
+
+            if (!window.embedded_svc) {
+                var s = document.createElement('script');
+                s.setAttribute('src', 'https://tcscom-fc-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.onload = function() {
+                    initESW(null);
+                };
+                document.body.appendChild(s);
+            } else {
+                initESW('https://service.force.com');
+            }
+
+            var environment = "xyz";  // for testing only
+            window.addEventListener("message", function(event) {
+                    if (event.data.name === "CountOfAgent") {
+                        receivedFilledValue = event.data.payload;
+                        console.log('from VFP******'+ receivedFilledValue);
+                        console.log('minimizeFlag0000 : '+minimizeFlag);
+                        if(receivedFilledValue >0 && !minimizeFlag ){
+                            console.log('ifCOn');
+                            setTimeout(agentOnline, 5000);
+                        }
+                        else if(receivedFilledValue == 0 && !minimizeFlag ){ 
+                            console.log('elseeee');
+                            setTimeout(agentOffline, 5000);
+                        }
+                        if (!minimizeFlag){
+                            setTimeout(refreshIframe,15000);
+                            console.log('iframe refresh called');
+                        }
+
+                    }
+                }, false);
+            </script>
+            <script type='text/javascript'>
+            
+            function refreshIframe(){
+                document.getElementById('iframeId').src+='';
+                /*
+                const iframe = document.getElementById("iframeId");
+                iframe.contentWindow.location.reload();
+                
+                document.querySelector('#iframeId').contentDocument.location.reload();
+                console.log('iframe refreshed');*/
+            }
+            function agentOffline(){
+                document.querySelector('#onlineImage').style="display : none;";
+                document.querySelector('#offlineImage').style="display : inline;";
+                console.log('offline method');
+            }
+            
+            function agentOnline(){
+                document.querySelector('#offlineImage').style="display : none;";
+                document.querySelector('#onlineImage').style="display : inline;";
+                console.log('online method');
+            }
+            function bootstrapChat() {
+                embedded_svc.bootstrapEmbeddedService();
+                console.log('bootstrap method call');
+            }
+        </script>
+
+        <iframe id="iframeId" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/apex/eevC" ></iframe>
+        
+
+        <div class = "icon-bar" >
+            <img id="onlineImage" src= "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
+                    onclick="bootstrapChat()" class="circle" style="display:none;" />
+            <img id="offlineImage" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/ChatBot" 
+                    onclick="bootstrapChat()" class="circle" style="display:none;" />
+        </div>
+        
+
+</html>
