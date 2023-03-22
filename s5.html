@@ -172,6 +172,10 @@
         }
     </script>
     <script type='text/javascript'>
+        function refreshIframe() {
+            document.getElementById('iFrameId').src+='';
+            console.log('bobot');
+        }
         function bootstrapChat() {
             embedded_svc.bootstrapEmbeddedService();
             console.log('bobot');
@@ -181,7 +185,10 @@
                 receivedFilledValue = event.data.payload;
                 console.log('from VFP******'+ receivedFilledValue);   
                 document.getElementById('test').innerHTML = receivedFilledValue ;
-                
+                if (true){
+setTimeout(refreshIframe,10000);
+Console.log('xdv');
+
                 if(receivedFilledValue == 0 ){
                     console.log('elseeee');
                     
