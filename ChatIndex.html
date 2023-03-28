@@ -700,6 +700,14 @@
                 document.querySelector('#IconImage').title = "Chat With "+ eShopBrand;
                 console.log('IconImage stage');
             }
+
+            const button = document.querySelector("button");
+
+            button.addEventListener("click", (event) => {
+                refreshIframe();
+
+                //button.textContent = `Click count: ${event.detail}`;
+            });
             </script>
         
 </body>
