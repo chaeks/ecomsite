@@ -1,730 +1,730 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script>
-    var eShopURL       = '';
-    var eShopSessionId = '';           
-    var eShopVIN       = '';           
-    var eShopBrand     = 'Ram';          
-    var eShopPhone     = ''; 
-    var phoneUS = eShopPhone.replace(/[&\/\\#, +()$~%.'":*?<>{}-]/g, '');
-    var emptyComment = '';  //Chetan
-    
-    
-    var minimizeFlag = false;  //emc-54
-    </script>
-    
-    
-    <style type='text/css'>
-        :root {
-        --brandColor : #000000;
-        --iconSize : 70px;
-        }
-    
-        .icon-bar{
-        position : fixed;
-        top:82%;
-        right : 12px;
-        z-index: 1060;
-        -webkit-transform : translateY(-50%);
-        -ms-transform : translateY(-50%);
-        transform  : translateY(-50%);
-        }
-        .circle{
-        width : var(--iconSize);
-        height : var(--iconSize);
-        border-radius : 50%;
-        z-index: 1065;
-        box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
-        border: 6px solid var(--brandColor);
-        transition: all .2s ease-in-out; 
-        animation:grow 2s infinite;
-        }
-        .circle:hover {
-        cursor: pointer;
-        }
-        @keyframes grow{
-        0% {transform: scale(1);}
-        50% {transform: scale(1.1);}
-        100% {transform: scale(1);}
-        }
-        @media(max-width : 500px){
-        .circle{
-        height : var(--iconSize);
-        width:  var(--iconSize);
-        bottom : 14%;
-        z-index: 1065;
-        box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
-        border: 6px solid var(--brandColor);
-        }
-        }
-        
-        .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: var(--brandColor);
-        font-family: "Arial", sans-serif;
-        width: var(--iconSize);
-        height:var(--iconSize);
-        border-radius: 50%;
-        min-width: 5em;
-        }
-                      
-        .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
-                display: none;
-         }
-           
-        .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
-                margin: auto;
-         }
-         .embeddedServiceHelpButton .embeddedServiceIcon::before {
-               font-size: 2.5em;
-               display: block;
-         }
-         .embeddedServiceHelpButton .helpButton .uiButton:focus {
-        outline: 1px solid var(--brandColor);
-        min-width: 5em;
-        border-radius: 50%;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
-        
-        font-family: "Arial", sans-serif;
-        border-radius: 50%;
-        min-width: 3.2em;
-        width: var(--iconSize) !important;
-        height:var(--iconSize) !important;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
-                display: none;
-         }
-        .embeddedServiceSidebarMinimizedDefaultUI .content{
-        padding:0 0px;
-        }
-        
-        .embeddedServiceSidebarMinimizedDefaultUI{
-        width: var(--iconSize) !important;
-        height:var(--iconSize)  !important;
-        border-radius: 10%;
-        min-width: 7em;
-        }
-        .message{
-        padding: 1px 1px 1px 1px;
-        margin: 0px 0px;
-        border-style: none;
-        }
-        .embeddedServiceIcon svg {
-        font-size: 2.2em !important;
-        }
-        .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
-        min-width: 3.2em;
-        }
-        
-        .cEShop_PreChat input.slds-input {
-        font-size: 13px !important;
-        border-radius: 4px !important;
-        padding: 0 12px 0 16px !important;
-        line-height: 30px !important;
-        width: 90% !important;
-        }
-        .cEShop_PreChat select.select {
-        font-size: 13px !important;
-        height: 32px !important;
-        }
-        
-        .embeddedServiceHelpButton {
-        z-index: 1001;
-        }
-        .embeddedServiceHelpButton .helpButton {
-        bottom: 14% !important;
-        width: var(--iconSize) !important;
-        height:var(--iconSize)  !important;
-        }
-        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
-        bottom: 14% !important;
-        width: var(--iconSize) !important;
-        height:var(--iconSize)  !important;
-        }
-        .embeddedServiceSidebarMinimizedDefaultUI{
-        bottom: 14% !important;
-        width: var(--iconSize) !important;
-        height:var(--iconSize)  !important;
-        }
-        @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        10% { transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { transform: translate(-3px, 0px) rotate(1deg); }
-        30% { transform: translate(3px, 2px) rotate(0deg); }
-        40% { transform: translate(1px, -1px) rotate(1deg); }
-        50% { transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { transform: translate(-3px, 1px) rotate(0deg); }
-        70% { transform: translate(3px, 1px) rotate(-1deg); }
-        80% { transform: translate(-1px, -1px) rotate(1deg); }
-        90% { transform: translate(1px, 2px) rotate(0deg); }
-        100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
+<body>
+    <script>
+        var eShopURL       = '';
+        var eShopSessionId = '';           
+        var eShopVIN       = '';           
+        var eShopBrand     = 'Ram';          
+        var eShopPhone     = ''; 
+        var phoneUS = eShopPhone.replace(/[&\/\\#, +()$~%.'":*?<>{}-]/g, '');
+        var emptyComment = '';  //Chetan
         
         
-        .wave{
-        position: fixed;
-        text-align: center;
-        top: 6px;  
-        right: 6px;   
-        width: var(--iconSize);
-        height: var(--iconSize);
-        border-radius: 50%;
-        background-color: var(--brandColor);
-        opacity: 0;
-        z-index: -1;
-        pointer-events: none;
-        animation:Waveeffects 2s linear infinite;
-        }
-        @keyframes Waveeffects {
-        from {
-        opacity: 1;
-        }
-        to {
-        transform: scale(1.6);
-        opacity: 0;
-        }
-        }
-             
-       
-    </style>
-    <script type='text/javascript'>
-    const colorMap = new Map();
-    colorMap.set('Jeep', '#ffba00');
-    colorMap.set('Ram', '#880d00');
-    colorMap.set('Dodge', '#d50000');
-    colorMap.set('Chrysler', '#063E77');
-    colorMap.set('Fiat', '#E70000');
-    colorMap.set('Wagoneer', '#15255D');
-    colorMap.set('Alfa Romeo', '#8F0C2C');
-    var brandColor;
-    for (const [key,value] of colorMap.entries()) {
-        if (key == eShopBrand){
-            brandColor = value;
-        }
-    }
-    var r = document.querySelector(':root');
-    r.style.setProperty('--brandColor', brandColor);
-    
-    </script>
-    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-    
-    <script type='text/javascript'>
+        var minimizeFlag = false;  //emc-54
+        </script>
         
-        var initESW = function(gslbBaseURL) {
+        
+        <style type='text/css'>
+            :root {
+            --brandColor : #000000;
+            --iconSize : 70px;
+            }
+        
+            .icon-bar{
+            position : fixed;
+            top:82%;
+            right : 12px;
+            z-index: 1060;
+            -webkit-transform : translateY(-50%);
+            -ms-transform : translateY(-50%);
+            transform  : translateY(-50%);
+            }
+            .circle{
+            width : var(--iconSize);
+            height : var(--iconSize);
+            border-radius : 50%;
+            z-index: 1065;
+            box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
+            border: 6px solid var(--brandColor);
+            transition: all .2s ease-in-out; 
+            animation:grow 2s infinite;
+            }
+            .circle:hover {
+            cursor: pointer;
+            }
+            @keyframes grow{
+            0% {transform: scale(1);}
+            50% {transform: scale(1.1);}
+            100% {transform: scale(1);}
+            }
+            @media(max-width : 500px){
+            .circle{
+            height : var(--iconSize);
+            width:  var(--iconSize);
+            bottom : 14%;
+            z-index: 1065;
+            box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
+            border: 6px solid var(--brandColor);
+            }
+            }
             
-            embedded_svc.settings.displayHelpButton = false; //EMC-54 false
-            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-            
-            embedded_svc.settings.defaultMinimizedText  = ' '; //(Defaults to Chat with an Expert)
-            embedded_svc.settings.disabledMinimizedText = ' '; //(Defaults to Agent Offline)
-            
-            embedded_svc.settings.loadingText = 'Loading'; //(Defaults to Loading)
-            
-            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-            embedded_svc.settings.entryFeature = 'LiveAgent';
-            embedded_svc.settings.widgetHeight     = '520px';
-            embedded_svc.settings.autoOpenPostChat = true;
+            .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: var(--brandColor);
+            font-family: "Arial", sans-serif;
+            width: var(--iconSize);
+            height:var(--iconSize);
+            border-radius: 50%;
+            min-width: 5em;
+            }
+                          
+            .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
+                    display: none;
+             }
                
-                embedded_svc.settings.prepopulatedPrechatFields = {
-                    FirstName: "Rudr",
-                    LastName: "Sharma",
-                    Email: "rudr@dummy.com",
-                    Phone: phoneUS,
-                    CC_Model__c : ""
-                };
-            
-          
-                embedded_svc.settings.extraPrechatFormDetails = [
-                    { "label": "eShopURL",                 "value": eShopURL,              "displayToAgent": false},
-                    { "label": "eShopBRAND",               "value": eShopBrand,            "displayToAgent": false},
-                    { "label": "ChatRequestVIN",           "value": eShopVIN,              "displayToAgent": false},
-                    { "label": "eShopSessionId",           "value": eShopSessionId,        "displayToAgent": false},
-                    { "label": "LeadRecordTypeId",         "value": "01217000005YzLCAA0",  "displayToAgent": false},
-                    { "label": "ChatRequestRecordTypeId",  "value": "01217000005ak24AAA",  "displayToAgent": false},
-                    { "label": "caseSourceCR",             "value": "eShop",                "displayToAgent": false},
-                    { "label": "caseSubject",              "value": "E-Shop Inquiry",      "displayToAgent": false},
-                    { "label": "caseDescription",          "value": "E-Shop Inquiry",      "displayToAgent": false},
-                    { "label": "caseOrigin",               "value": "Chat",                "displayToAgent": false},
-                    { "label": "caseType",                 "value": "Regular",             "displayToAgent": false},
-                    { "label": "caseMarket",               "value": "USA",                 "displayToAgent": false},
-                    { "label": "caseLOB",                  "value": "Marketplace",         "displayToAgent": false},
-                    { "label": "caseStatus",               "value": "Closed",              "displayToAgent": false},
-                    { "label": "caseCloseReason",          "value": "Closed by System",    "displayToAgent": false},
-                    { "label": "caseInboundOutbound",      "value": "Inbound",             "displayToAgent": false},
-                    { "label": "caseSource",               "value": "Customer",            "displayToAgent": false},
-                    { "label": "caseCloseSynopsis",        "value": "E-shop chat case concluded by System",   "displayToAgent": false},
-                    { "label": "caseSourceDetails",        "value": eShopBrand,        		"displayToAgent": false},
-                    { "label": "emptyComment",        		"value": "",        			"displayToAgent": false}, //Chetan
-                    {
-                        "label": "Source details",
-                        "value": "Marketplace",
-                        "transcriptFields":[ "CC_Source_details__c" ],
-                        "displayToAgent":false
-                    }
-                ];
-            
-            embedded_svc.settings.extraPrechatInfo = [
-                {
-                    "entityName": "CC_ChatRequest__c",
-                    "saveToTranscript":"CC_LiveTranscriptChatRequest__c",
-                    "showOnCreate": true,
-                    "entityFieldMaps": [
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerFirstName__c",
-                            "isExactMatch": false,
-                            "label": "First Name"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_Brand__c",
-                            "isExactMatch": false,
-                            "label": "eShopBRAND"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerLastName__c",
-                            "isExactMatch": false,
-                            "label": "Last Name"
-                        }, 
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerEmail__c",
-                            "isExactMatch": false,
-                            "label": "Email 1"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerPhone__c",
-                            "isExactMatch": false,
-                            "label": "Phone Number Type 1"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "eShop_Reasonforcontact__c",
-                            "isExactMatch": false,
-                            "label": "Reason for contact"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "RecordTypeId",
-                            "isExactMatch": false,
-                            "label": "ChatRequestRecordTypeId"   
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerVIN__c",
-                            "isExactMatch": false,
-                            "label": "ChatRequestVIN" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerSource__c", 
-                            "isExactMatch": false,
-                            "label": "caseSourceCR" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "eShop_ChatSubmittedURL__c", 
-                            "isExactMatch": false,
-                            "label": "eShopURL" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "eShop_SessionId__c", 
-                            "isExactMatch": false,
-                            "label": "eShopSessionId" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CustomerComment__c",
-                            "isExactMatch": false,
-                            "label": "Comments"
-                        }
-                        
-                    ]
-                }, {
-                    "entityName": "Lead",
-                    "saveToTranscript":"LeadId",
-                    "linkToEntityName": "CC_ChatRequest__c",
-                    "linkToEntityField": "Lead__c",
-                    "showOnCreate": true,
-                    "entityFieldMaps": [
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "FirstName",
-                            "isExactMatch": false,
-                            "label": "First Name"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "LastName",
-                            "isExactMatch": false,
-                            "label": "Last Name"
-                        }, 
-                        {
-                            "doCreate": true,
-                            "doFind": true,
-                            "fieldName": "Email",
-                            "isExactMatch": true,
-                            "label": "Email 1"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Phone",
-                            "isExactMatch": false,
-                            "label": "Phone Number Type 1"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "RecordTypeId",
-                            "isExactMatch": false,
-                            "label": "LeadRecordTypeId"                 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_BrandInterest__c",
-                            "isExactMatch": false,
-                            "label": "caseSourceDetails"                 
-                        } // Added by Abhishek
-                    ]
-                },{
-                    "entityName": "Case",
-                    "saveToTranscript":"CaseId",
-                    "linkToEntityName": "CC_ChatRequest__c",
-                    "linkToEntityField": "CC_Case__c",
-                    "showOnCreate": true,
-                    "entityFieldMaps": [
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Subject",
-                            "isExactMatch": false,
-                            "label": "caseSubject"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Description",
-                            "isExactMatch": false,
-                            "label": "caseDescription"
-                        }, 
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_ContactFirstName__c",
-                            "isExactMatch": false,
-                            "label": "First Name"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_ContactLastName__c",
-                            "isExactMatch": false,
-                            "label": "Last Name"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Origin",
-                            "isExactMatch": false,
-                            "label": "caseOrigin"
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Type",
-                            "isExactMatch": false,
-                            "label": "caseType"   
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_Market__c",
-                            "isExactMatch": false,
-                            "label": "caseMarket" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_LOB__c",
-                            "isExactMatch": false,
-                            "label": "caseLOB" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "Status",
-                            "isExactMatch": false,
-                            "label": "caseStatus" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_Case_Closure_Reason__c",
-                            "isExactMatch": false,
-                            "label": "caseCloseReason" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_Synopsis__c",
-                            "isExactMatch": false,
-                            "label": "caseCloseSynopsis" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_CaseSource__c",
-                            "isExactMatch": false,
-                            "label": "caseSource" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_InboundOutbound__c",
-                            "isExactMatch": false,
-                            "label": "caseInboundOutbound" 
-                        },
-                        {
-                            "doCreate": true,
-                            "doFind": false,
-                            "fieldName": "CC_OTDComments__c",
-                            "isExactMatch": false,
-                            "label": "emptyComment" 
-                        }
-                        
-                    ]
-                },{
-                    "entityName": "Contact",
-                    "entityFieldMaps": [
-                        {
-                            "doCreate": false,
-                            "doFind": false,
-                            "fieldName": "FirstName",
-                            "isExactMatch": false,
-                            "label": "First Name"
-                        },
-                        {
-                            "doCreate": false,
-                            "doFind": false,
-                            "fieldName": "LastName",
-                            "isExactMatch": false,
-                            "label": "Last Name"
-                        },
-                        {
-                            "doCreate": false,
-                            "doFind": false,
-                            "fieldName": "Email",
-                            "isExactMatch": false,
-                            "label": "Email 1"
-                        },
-                        {
-                            "doCreate": false,
-                            "doFind": false,
-                            "fieldName": "Phone",
-                            "isExactMatch": false,
-                            "label": "Phone Number Type 1"
-                        }
-                    ]
-                }];
-            
-            
-            embedded_svc.addEventHandler("onHelpButtonClick", function(data) {
-            console.log("On Click Chat icon event was fired.");
-            });
-            
-            embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
-            console.log("On Click Start Chat Button event was fired.");
-            });
-            
-            embedded_svc.addEventHandler("onChatEstablished", function(data) {
-                const varStyle=document.getElementsByClassName("minimizedText");
-                varStyle[0].style.display='block';
-                console.log("On Chat Established event was fired.");
-            });
-            
-            embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
-            console.log("On ChatTransferSuccessfulToLiveAgent event was fired.");
-            });
-            
-            embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
-                console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
-            });
-            
-            embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
-                console.log("onChatEndedByAgent event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
-            });
-            
-            embedded_svc.addEventHandler("onAgentMessage", function(data) {
-                const varStyle=document.getElementsByClassName("minimizedText");
-                varStyle[0].style.display='block';
-                console.log("onAgentMessage event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
-            });
-            embedded_svc.addEventHandler("onChatEndedByChatbot", function(data) {
-            console.log("onChatEndedByChatbot event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
-            });        
-            
-            embedded_svc.addEventHandler("afterMinimize", function(data) {
-            console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
-                 //EMC-54 Start
-                document.querySelector('#IconImage').style="display : none;";
-                document.querySelector('.wave').style = "display:none;";
-                minimizeFlag = true;
-                //EMC-54 End
-            }); 
-            
-            embedded_svc.addEventHandler("afterMaximize", function(data) {
-            console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
-                //EMC-54 Start
-                document.querySelector('#IconImage').style="display : none;";
-                document.querySelector('.wave').style = "display:none;";
-                minimizeFlag = true;
-                //EMC-54 End
-            }); 
-            
-            embedded_svc.addEventHandler("afterDestroy", function(data) {
-             const varStyle=document.getElementsByClassName("embeddedServiceIcon");
-             varStyle[0].style.display='block';
-             console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
-                //EMC-54 Start
-                minimizeFlag = false; 
-                refreshIframe();
-                //EMC-54 End
-            }); 
-            
-            embedded_svc.init(
-                'https://fcagroup--eshop.sandbox.my.salesforce.com',
-                'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite',
-                gslbBaseURL,
-                '00D17000000ebj7',
-                'eShop_Marketplace_RAM',
-                {
-                    baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
-                    deploymentId: '572170000008fru',
-                    buttonId: '573170000008hUV',
-                    baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
-                    eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001XIEAY_1857bde58b5',
-                    isOfflineSupportEnabled: false
-                }
-            );
-        };
-    
-    if (!window.embedded_svc) {
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://fcagroup--eshop.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function() {
-            initESW(null);
-        };
-        document.body.appendChild(s);
-    } else {
-        initESW('https://service.force.com');
-    }
-    var environment = "stage";  // for testing only
-    if ((environment == "stage") || (environment == "uat") || (environment == "e-shop")){
-        window.addEventListener("message", function(event) {
-            if (event.data.name === "Marketplace_FormFilled") {
-                //CDP logic
-                console.log('CDP******');
+            .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
+                    margin: auto;
+             }
+             .embeddedServiceHelpButton .embeddedServiceIcon::before {
+                   font-size: 2.5em;
+                   display: block;
+             }
+             .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid var(--brandColor);
+            min-width: 5em;
+            border-radius: 50%;
             }
-            //EMC-54 Start
-            if (event.data.name === "CountOfMarketplaceAgent") {
-                receivedFilledValue = event.data.payload;
-                
-                if(receivedFilledValue >0 && !minimizeFlag ){
-                    setTimeout(agentOnline, 2000);
-                }
-                else if(receivedFilledValue == 0 && !minimizeFlag ){
-                    setTimeout(agentOffline, 2000);
-                }
-                if (!minimizeFlag){
-                    setTimeout(refreshIframe,3000);  //15000
-                    console.log('iframe refresh called');
-                }
+            
+            .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+            
+            font-family: "Arial", sans-serif;
+            border-radius: 50%;
+            min-width: 3.2em;
+            width: var(--iconSize) !important;
+            height:var(--iconSize) !important;
             }
-            //EMC-54 End
-            //EMC-99 Start
-            if (event.data.name === "Marketplace_EmailValue") {
-                console.log('NNNNN');
-                console.log('Value : '+event.data.payload);
-                
+            
+            .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
+                    display: none;
+             }
+            .embeddedServiceSidebarMinimizedDefaultUI .content{
+            padding:0 0px;
             }
-            //EMC-99 End
-        }, false);
-    }
-    </script>
-    <script type='text/javascript'>
-    
-    function refreshIframe(){
-        document.getElementById('iframeId').src+='';
-        console.log('iframe refreshed');
-    }
-    function agentOffline(){
-        if (!minimizeFlag){  //Because on fast minimize giving wrong UI
-            document.querySelector('#IconImage').style="display : inline;";
-            document.querySelector('.wave').style = "display:none;";
-            document.querySelector('.circle').style = "animation: none;";
-            console.log('offline method');
-        }
-    }
-    function agentOnline(){
-        if (!minimizeFlag){ //Because on fast minimize giving wrong UI
-            document.querySelector('#IconImage').style="display : inline;";
-            document.querySelector('.wave').style = "display:inline;";
-            console.log('online method');
-        }
-    }
-    function bootstrapChat() {
-        embedded_svc.bootstrapEmbeddedService();
-        console.log('bootstrap method call');
-    }
-    </script>
-    
-
-    <body>
-        <h1>This is for Chat</h1>
-       	<iframe id="iframeId" src="" style="display:none;"></iframe>
-        
-        <div class = "icon-bar" >
-            <img id="IconImage" src="" 
-                 onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
+            
+            .embeddedServiceSidebarMinimizedDefaultUI{
+            width: var(--iconSize) !important;
+            height:var(--iconSize)  !important;
+            border-radius: 10%;
+            min-width: 7em;
+            }
+            .message{
+            padding: 1px 1px 1px 1px;
+            margin: 0px 0px;
+            border-style: none;
+            }
+            .embeddedServiceIcon svg {
+            font-size: 2.2em !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
+            min-width: 3.2em;
+            }
+            
+            .cEShop_PreChat input.slds-input {
+            font-size: 13px !important;
+            border-radius: 4px !important;
+            padding: 0 12px 0 16px !important;
+            line-height: 30px !important;
+            width: 90% !important;
+            }
+            .cEShop_PreChat select.select {
+            font-size: 13px !important;
+            height: 32px !important;
+            }
+            
+            .embeddedServiceHelpButton {
+            z-index: 1001;
+            }
+            .embeddedServiceHelpButton .helpButton {
+            bottom: 14% !important;
+            width: var(--iconSize) !important;
+            height:var(--iconSize)  !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+            bottom: 14% !important;
+            width: var(--iconSize) !important;
+            height:var(--iconSize)  !important;
+            }
+            .embeddedServiceSidebarMinimizedDefaultUI{
+            bottom: 14% !important;
+            width: var(--iconSize) !important;
+            height:var(--iconSize)  !important;
+            }
+            @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }
+            
+            
+            .wave{
+            position: fixed;
+            text-align: center;
+            top: 6px;  
+            right: 6px;   
+            width: var(--iconSize);
+            height: var(--iconSize);
+            border-radius: 50%;
+            background-color: var(--brandColor);
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            animation:Waveeffects 2s linear infinite;
+            }
+            @keyframes Waveeffects {
+            from {
+            opacity: 1;
+            }
+            to {
+            transform: scale(1.6);
+            opacity: 0;
+            }
+            }
+                 
            
-            <div class="wave" style="display:none;"></div>
-        </div>
+        </style>
         <script type='text/javascript'>
-        console.log('Environment : '+ environment);
-     
-        if (environment == "stage"){
-            document.querySelector('#IconImage').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/resource/1675061636000/EshopChatImage";
-            document.querySelector('#iframeId').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/apex/eShop_JeepMarketplaceIframe";
-            document.querySelector('#IconImage').title = "Chat With "+ eShopBrand;
-            console.log('IconImage stage');
+        const colorMap = new Map();
+        colorMap.set('Jeep', '#ffba00');
+        colorMap.set('Ram', '#880d00');
+        colorMap.set('Dodge', '#d50000');
+        colorMap.set('Chrysler', '#063E77');
+        colorMap.set('Fiat', '#E70000');
+        colorMap.set('Wagoneer', '#15255D');
+        colorMap.set('Alfa Romeo', '#8F0C2C');
+        var brandColor;
+        for (const [key,value] of colorMap.entries()) {
+            if (key == eShopBrand){
+                brandColor = value;
+            }
+        }
+        var r = document.querySelector(':root');
+        r.style.setProperty('--brandColor', brandColor);
+        
+        </script>
+        <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+        
+        <script type='text/javascript'>
+            
+            var initESW = function(gslbBaseURL) {
+                
+                embedded_svc.settings.displayHelpButton = false; //EMC-54 false
+                embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+                
+                embedded_svc.settings.defaultMinimizedText  = ' '; //(Defaults to Chat with an Expert)
+                embedded_svc.settings.disabledMinimizedText = ' '; //(Defaults to Agent Offline)
+                
+                embedded_svc.settings.loadingText = 'Loading'; //(Defaults to Loading)
+                
+                embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                embedded_svc.settings.entryFeature = 'LiveAgent';
+                embedded_svc.settings.widgetHeight     = '520px';
+                embedded_svc.settings.autoOpenPostChat = true;
+                   
+                    embedded_svc.settings.prepopulatedPrechatFields = {
+                        FirstName: "Rudr",
+                        LastName: "Sharma",
+                        Email: "rudr@dummy.com",
+                        Phone: phoneUS,
+                        CC_Model__c : ""
+                    };
+                
+              
+                    embedded_svc.settings.extraPrechatFormDetails = [
+                        { "label": "eShopURL",                 "value": eShopURL,              "displayToAgent": false},
+                        { "label": "eShopBRAND",               "value": eShopBrand,            "displayToAgent": false},
+                        { "label": "ChatRequestVIN",           "value": eShopVIN,              "displayToAgent": false},
+                        { "label": "eShopSessionId",           "value": eShopSessionId,        "displayToAgent": false},
+                        { "label": "LeadRecordTypeId",         "value": "01217000005YzLCAA0",  "displayToAgent": false},
+                        { "label": "ChatRequestRecordTypeId",  "value": "01217000005ak24AAA",  "displayToAgent": false},
+                        { "label": "caseSourceCR",             "value": "eShop",                "displayToAgent": false},
+                        { "label": "caseSubject",              "value": "E-Shop Inquiry",      "displayToAgent": false},
+                        { "label": "caseDescription",          "value": "E-Shop Inquiry",      "displayToAgent": false},
+                        { "label": "caseOrigin",               "value": "Chat",                "displayToAgent": false},
+                        { "label": "caseType",                 "value": "Regular",             "displayToAgent": false},
+                        { "label": "caseMarket",               "value": "USA",                 "displayToAgent": false},
+                        { "label": "caseLOB",                  "value": "Marketplace",         "displayToAgent": false},
+                        { "label": "caseStatus",               "value": "Closed",              "displayToAgent": false},
+                        { "label": "caseCloseReason",          "value": "Closed by System",    "displayToAgent": false},
+                        { "label": "caseInboundOutbound",      "value": "Inbound",             "displayToAgent": false},
+                        { "label": "caseSource",               "value": "Customer",            "displayToAgent": false},
+                        { "label": "caseCloseSynopsis",        "value": "E-shop chat case concluded by System",   "displayToAgent": false},
+                        { "label": "caseSourceDetails",        "value": eShopBrand,        		"displayToAgent": false},
+                        { "label": "emptyComment",        		"value": "",        			"displayToAgent": false}, //Chetan
+                        {
+                            "label": "Source details",
+                            "value": "Marketplace",
+                            "transcriptFields":[ "CC_Source_details__c" ],
+                            "displayToAgent":false
+                        }
+                    ];
+                
+                embedded_svc.settings.extraPrechatInfo = [
+                    {
+                        "entityName": "CC_ChatRequest__c",
+                        "saveToTranscript":"CC_LiveTranscriptChatRequest__c",
+                        "showOnCreate": true,
+                        "entityFieldMaps": [
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerFirstName__c",
+                                "isExactMatch": false,
+                                "label": "First Name"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_Brand__c",
+                                "isExactMatch": false,
+                                "label": "eShopBRAND"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerLastName__c",
+                                "isExactMatch": false,
+                                "label": "Last Name"
+                            }, 
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerEmail__c",
+                                "isExactMatch": false,
+                                "label": "Email 1"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerPhone__c",
+                                "isExactMatch": false,
+                                "label": "Phone Number Type 1"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "eShop_Reasonforcontact__c",
+                                "isExactMatch": false,
+                                "label": "Reason for contact"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "RecordTypeId",
+                                "isExactMatch": false,
+                                "label": "ChatRequestRecordTypeId"   
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerVIN__c",
+                                "isExactMatch": false,
+                                "label": "ChatRequestVIN" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerSource__c", 
+                                "isExactMatch": false,
+                                "label": "caseSourceCR" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "eShop_ChatSubmittedURL__c", 
+                                "isExactMatch": false,
+                                "label": "eShopURL" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "eShop_SessionId__c", 
+                                "isExactMatch": false,
+                                "label": "eShopSessionId" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CustomerComment__c",
+                                "isExactMatch": false,
+                                "label": "Comments"
+                            }
+                            
+                        ]
+                    }, {
+                        "entityName": "Lead",
+                        "saveToTranscript":"LeadId",
+                        "linkToEntityName": "CC_ChatRequest__c",
+                        "linkToEntityField": "Lead__c",
+                        "showOnCreate": true,
+                        "entityFieldMaps": [
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "FirstName",
+                                "isExactMatch": false,
+                                "label": "First Name"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "LastName",
+                                "isExactMatch": false,
+                                "label": "Last Name"
+                            }, 
+                            {
+                                "doCreate": true,
+                                "doFind": true,
+                                "fieldName": "Email",
+                                "isExactMatch": true,
+                                "label": "Email 1"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Phone",
+                                "isExactMatch": false,
+                                "label": "Phone Number Type 1"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "RecordTypeId",
+                                "isExactMatch": false,
+                                "label": "LeadRecordTypeId"                 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_BrandInterest__c",
+                                "isExactMatch": false,
+                                "label": "caseSourceDetails"                 
+                            } // Added by Abhishek
+                        ]
+                    },{
+                        "entityName": "Case",
+                        "saveToTranscript":"CaseId",
+                        "linkToEntityName": "CC_ChatRequest__c",
+                        "linkToEntityField": "CC_Case__c",
+                        "showOnCreate": true,
+                        "entityFieldMaps": [
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Subject",
+                                "isExactMatch": false,
+                                "label": "caseSubject"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Description",
+                                "isExactMatch": false,
+                                "label": "caseDescription"
+                            }, 
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_ContactFirstName__c",
+                                "isExactMatch": false,
+                                "label": "First Name"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_ContactLastName__c",
+                                "isExactMatch": false,
+                                "label": "Last Name"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Origin",
+                                "isExactMatch": false,
+                                "label": "caseOrigin"
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Type",
+                                "isExactMatch": false,
+                                "label": "caseType"   
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_Market__c",
+                                "isExactMatch": false,
+                                "label": "caseMarket" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_LOB__c",
+                                "isExactMatch": false,
+                                "label": "caseLOB" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "Status",
+                                "isExactMatch": false,
+                                "label": "caseStatus" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_Case_Closure_Reason__c",
+                                "isExactMatch": false,
+                                "label": "caseCloseReason" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_Synopsis__c",
+                                "isExactMatch": false,
+                                "label": "caseCloseSynopsis" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_CaseSource__c",
+                                "isExactMatch": false,
+                                "label": "caseSource" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_InboundOutbound__c",
+                                "isExactMatch": false,
+                                "label": "caseInboundOutbound" 
+                            },
+                            {
+                                "doCreate": true,
+                                "doFind": false,
+                                "fieldName": "CC_OTDComments__c",
+                                "isExactMatch": false,
+                                "label": "emptyComment" 
+                            }
+                            
+                        ]
+                    },{
+                        "entityName": "Contact",
+                        "entityFieldMaps": [
+                            {
+                                "doCreate": false,
+                                "doFind": false,
+                                "fieldName": "FirstName",
+                                "isExactMatch": false,
+                                "label": "First Name"
+                            },
+                            {
+                                "doCreate": false,
+                                "doFind": false,
+                                "fieldName": "LastName",
+                                "isExactMatch": false,
+                                "label": "Last Name"
+                            },
+                            {
+                                "doCreate": false,
+                                "doFind": false,
+                                "fieldName": "Email",
+                                "isExactMatch": false,
+                                "label": "Email 1"
+                            },
+                            {
+                                "doCreate": false,
+                                "doFind": false,
+                                "fieldName": "Phone",
+                                "isExactMatch": false,
+                                "label": "Phone Number Type 1"
+                            }
+                        ]
+                    }];
+                
+                
+                embedded_svc.addEventHandler("onHelpButtonClick", function(data) {
+                console.log("On Click Chat icon event was fired.");
+                });
+                
+                embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
+                console.log("On Click Start Chat Button event was fired.");
+                });
+                
+                embedded_svc.addEventHandler("onChatEstablished", function(data) {
+                    const varStyle=document.getElementsByClassName("minimizedText");
+                    varStyle[0].style.display='block';
+                    console.log("On Chat Established event was fired.");
+                });
+                
+                embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
+                console.log("On ChatTransferSuccessfulToLiveAgent event was fired.");
+                });
+                
+                embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
+                    console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                });
+                
+                embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
+                    console.log("onChatEndedByAgent event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                });
+                
+                embedded_svc.addEventHandler("onAgentMessage", function(data) {
+                    const varStyle=document.getElementsByClassName("minimizedText");
+                    varStyle[0].style.display='block';
+                    console.log("onAgentMessage event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+                });
+                embedded_svc.addEventHandler("onChatEndedByChatbot", function(data) {
+                console.log("onChatEndedByChatbot event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
+                });        
+                
+                embedded_svc.addEventHandler("afterMinimize", function(data) {
+                console.log("afterMinimize event was fired. Agent availability status is "+JSON.stringify(data));
+                     //EMC-54 Start
+                    document.querySelector('#IconImage').style="display : none;";
+                    document.querySelector('.wave').style = "display:none;";
+                    minimizeFlag = true;
+                    //EMC-54 End
+                }); 
+                
+                embedded_svc.addEventHandler("afterMaximize", function(data) {
+                console.log("afterMaximize event was fired. Agent availability status is "+JSON.stringify(data));
+                    //EMC-54 Start
+                    document.querySelector('#IconImage').style="display : none;";
+                    document.querySelector('.wave').style = "display:none;";
+                    minimizeFlag = true;
+                    //EMC-54 End
+                }); 
+                
+                embedded_svc.addEventHandler("afterDestroy", function(data) {
+                 const varStyle=document.getElementsByClassName("embeddedServiceIcon");
+                 varStyle[0].style.display='block';
+                 console.log("afterDestroy event was fired. Agent availability status is "+JSON.stringify(data));
+                    //EMC-54 Start
+                    minimizeFlag = false; 
+                    refreshIframe();
+                    //EMC-54 End
+                }); 
+                
+                embedded_svc.init(
+                    'https://fcagroup--eshop.sandbox.my.salesforce.com',
+                    'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite',
+                    gslbBaseURL,
+                    '00D17000000ebj7',
+                    'eShop_Marketplace_RAM',
+                    {
+                        baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+                        deploymentId: '572170000008fru',
+                        buttonId: '573170000008hUV',
+                        baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001XIEAY_1857bde58b5',
+                        isOfflineSupportEnabled: false
+                    }
+                );
+            };
+        
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://fcagroup--eshop.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+        var environment = "stage";  // for testing only
+        if ((environment == "stage") || (environment == "uat") || (environment == "e-shop")){
+            window.addEventListener("message", function(event) {
+                if (event.data.name === "Marketplace_FormFilled") {
+                    //CDP logic
+                    console.log('CDP******');
+                }
+                //EMC-54 Start
+                if (event.data.name === "CountOfMarketplaceAgent") {
+                    receivedFilledValue = event.data.payload;
+                    
+                    if(receivedFilledValue >0 && !minimizeFlag ){
+                        setTimeout(agentOnline, 2000);
+                    }
+                    else if(receivedFilledValue == 0 && !minimizeFlag ){
+                        setTimeout(agentOffline, 2000);
+                    }
+                    if (!minimizeFlag){
+                        setTimeout(refreshIframe,3000);  //15000
+                        console.log('iframe refresh called');
+                    }
+                }
+                //EMC-54 End
+                //EMC-99 Start
+                if (event.data.name === "Marketplace_EmailValue") {
+                    console.log('NNNNN');
+                    console.log('Value : '+event.data.payload);
+                    
+                }
+                //EMC-99 End
+            }, false);
         }
         </script>
-    </body>
+        <script type='text/javascript'>
+        
+        function refreshIframe(){
+            document.getElementById('iframeId').src+='';
+            console.log('iframe refreshed');
+        }
+        function agentOffline(){
+            if (!minimizeFlag){  //Because on fast minimize giving wrong UI
+                document.querySelector('#IconImage').style="display : inline;";
+                document.querySelector('.wave').style = "display:none;";
+                document.querySelector('.circle').style = "animation: none;";
+                console.log('offline method');
+            }
+        }
+        function agentOnline(){
+            if (!minimizeFlag){ //Because on fast minimize giving wrong UI
+                document.querySelector('#IconImage').style="display : inline;";
+                document.querySelector('.wave').style = "display:inline;";
+                console.log('online method');
+            }
+        }
+        function bootstrapChat() {
+            embedded_svc.bootstrapEmbeddedService();
+            console.log('bootstrap method call');
+        }
+        </script>
+        
+            <h1>This is for Chat</h1>
+               <iframe id="iframeId" src="" style="display:none;"></iframe>
+            
+            <div class = "icon-bar" >
+                <img id="IconImage" src="" 
+                     onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
+               
+                <div class="wave" style="display:none;"></div>
+            </div>
+            <script type='text/javascript'>
+            console.log('Environment : '+ environment);
+         
+            if (environment == "stage"){
+                document.querySelector('#IconImage').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/resource/1675061636000/EshopChatImage";
+                document.querySelector('#iframeId').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/apex/eShop_JeepMarketplaceIframe";
+                document.querySelector('#IconImage').title = "Chat With "+ eShopBrand;
+                console.log('IconImage stage');
+            }
+            </script>
+        
+</body>
 </html>
