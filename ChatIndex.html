@@ -726,6 +726,7 @@
                 document.querySelector('#IconImage').title = "Chat With "+ eShopBrand;
                 console.log('IconImage stage');
             }
+                sforce.connection.sessionId = '{!$Api.Session_ID}';
                 var contextUser = sforce.apex.execute("FlowController", "getContextUserName", {});
                 console.log('contextUser ='+contextUser);
 
