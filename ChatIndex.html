@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-< lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/soap/ajax/57.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/57.0/apex.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 <body>
@@ -724,6 +726,9 @@
                 document.querySelector('#IconImage').title = "Chat With "+ eShopBrand;
                 console.log('IconImage stage');
             }
+                var contextUser = sforce.apex.execute("FlowController", "getContextUserName", {});
+                console.log('contextUser ='+contextUser);
+
             </script>
         
 </body>
