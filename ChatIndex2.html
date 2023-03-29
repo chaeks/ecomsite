@@ -705,14 +705,18 @@
                 console.log('IconImage stage');
             }
 
-            const a = document.querySelectorAll("a");
-
+            const a1 = document.querySelectorAll("a");
+            a1.forEach(box => {
+                    box.addEventListener("click", (event) => {
+                    console.log('click event');
+                    refreshIframe();
+                });
+            });
+                /*
             a.addEventListener("click", (event) => {
                 console.log('click event');
                 refreshIframe();
-
-                //button.textContent = `Click count: ${event.detail}`;
-            });
+            });*/
             </script>
         
 </body>
