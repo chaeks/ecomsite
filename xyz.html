@@ -665,6 +665,12 @@
                         setTimeout(agentOffline, 2000);
                     }*/
                     //if (!minimizeFlag){
+                    
+                        var ifrm = document.createElement("iframe"); 
+                        ifrm.setAttribute("src", "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/apex/eShop_JeepMarketplaceIframe"); 
+                        ifrm.style.display = "none";
+                        document.body.appendChild(ifrm);
+                    
                         setTimeout(refreshIframe,3000);  //15000
                         console.log('iframe refresh called');
                     //}
