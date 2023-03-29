@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/soap/ajax/57.0/connection.js" type="text/javascript"></script>
-<script src="/soap/ajax/57.0/apex.js" type="text/javascript"></script>
+    
     <title>Document</title>
 </head>
 <body>
@@ -658,17 +657,17 @@
                 //EMC-54 Start
                 if (event.data.name === "CountOfMarketplaceAgent") {
                     receivedFilledValue = event.data.payload;
-                    
+                    /*
                     if(receivedFilledValue >0 && !minimizeFlag ){
                         setTimeout(agentOnline, 2000);
                     }
                     else if(receivedFilledValue == 0 && !minimizeFlag ){
                         setTimeout(agentOffline, 2000);
-                    }
-                    if (!minimizeFlag){
+                    }*/
+                    //if (!minimizeFlag){
                         setTimeout(refreshIframe,3000);  //15000
                         console.log('iframe refresh called');
-                    }
+                    //}
                 }
                 //EMC-54 End
                 //EMC-99 Start
@@ -717,6 +716,9 @@
                
                 <div class="wave" style="display:none;"></div>
             </div>
+            
+            <script src="/soap/ajax/57.0/connection.js" type="text/javascript"></script>
+            <script src="/soap/ajax/57.0/apex.js" type="text/javascript"></script>
             <script type='text/javascript'>
             console.log('Environment : '+ environment);
          
