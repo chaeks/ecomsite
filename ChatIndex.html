@@ -78,8 +78,7 @@
             }
             }
             .modelId{
-            display : inline;
-            animation: hider 5s forwards;  
+            display : none;
             }
             
             .embeddedServiceHelpButton .helpButton .uiButton {
@@ -704,7 +703,7 @@
                 console.log('bootstrap method call');
             }
             else{
-                document.querySelector('.modelId').style="display : inline; animation : hider 3s;";
+                document.querySelector('.modelId').style="display : inline; animation : hider 3s forwards;";
                 console.log('Dont Allow');
             }
             
