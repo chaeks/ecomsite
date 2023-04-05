@@ -48,9 +48,19 @@
             cursor: pointer;
             }
             @keyframes hider{
+                0%   {opacity: 1;}
+                90%  {opacity: 1;}
+                100% {opacity: 0;}
+            }
+            
+            @keyframes cssAnimation {
                 0%{visibility: visible;}
                 95%{visibility: visible;}
                 100%{visibility: hidden;}
+                
+                0%   {opacity: 1;}
+                90%  {opacity: 1;}
+                100% {opacity: 0;}
             }
             @keyframes grow{
             0% {transform: scale(1);}
