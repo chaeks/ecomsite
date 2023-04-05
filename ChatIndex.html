@@ -67,8 +67,8 @@
             border: 6px solid var(--brandColor);
             }
             }
-            #modelId{
-            display : none;
+            .modelId{
+            display : inline;
                 animation : hider 3s;
             }
             
@@ -694,7 +694,7 @@
                 console.log('bootstrap method call');
             }
             else{
-                document.querySelector('#modelId').style="display : inline;";
+                document.querySelector('#modelId').style="display : inline; animation : hider 3s;";
                 console.log('Dont Allow');
             }
             
@@ -708,7 +708,7 @@
             <iframe id="iframeId" src="" style="display:none;"></iframe>
             
             <div class = "icon-bar" >
-                <p id="modelId">Please select any model</p>
+                <p class="modelId" style="display:none;">Please select any model</p>
                 <img id="IconImage" src="" 
                      onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
                
