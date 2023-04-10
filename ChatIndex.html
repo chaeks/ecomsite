@@ -704,8 +704,10 @@
                 console.log('bootstrap method call');
             }
             else{
-                console.log('ss = ' + document.querySelector('#modelId').style);
+                console.log('ss = ' + document.querySelector('#modelId').style.opacity);
+                document.querySelector('#modelId').style="animation :none;opacity : 0;";
                 if (document.querySelector('#modelId').style.opacity == 0){
+                    
                     document.querySelector('#modelId').style="animation : hider 3s forwards;";
                     console.log('Dont Allow');
                     //document.querySelector('.modelId:after').style="display : none;";
