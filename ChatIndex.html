@@ -704,9 +704,14 @@
                 console.log('bootstrap method call');
             }
             else{
-                document.querySelector('.modelId').style="display : inline; animation : hider 3s forwards;";
-                console.log('Dont Allow');
-                //document.querySelector('.modelId:after').style="display : none;";
+                const mm = document.getElementById("modelId1");
+           mm.innerText = "OOO";
+           mm.style.display = "inline";
+                     
+                setTimeout(function(){
+                mm.style.display = "none";
+                    
+                },2000);
             }
             
         }
@@ -745,10 +750,7 @@
                 //button.textContent = `Click count: ${event.detail}`;
             });
                 
-            const mm = document.getElementById("modelId1");
-           mm.innerText = "OOO";
-           mm.style.display = "inline";
-                                                   
+            
             </script>
         
 </body>
