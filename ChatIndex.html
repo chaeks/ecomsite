@@ -698,20 +698,15 @@
             }
         }
         function bootstrapChat() {
-            
+            document.querySelector('.modelId').style="";
             if (model){
                 embedded_svc.bootstrapEmbeddedService();
                 console.log('bootstrap method call');
             }
             else{
-                const mm = document.getElementById("modelId1");
-           mm.innerText = "OOO";
-           mm.style.display = "inline";
-                     
-                setTimeout(function(){
-                mm.style.display = "none";
-                    
-                },2000);
+                document.querySelector('.modelId').style="display : inline; animation : hider 3s forwards;";
+                console.log('Dont Allow');
+                //document.querySelector('.modelId:after').style="display : none;";
             }
             
         }
@@ -724,7 +719,7 @@
             <iframe id="iframeId" src="" style="display:none;"></iframe>
             
             <div class = "icon-bar" >
-                <div id="modelId1" style="display:none;">Please select any model</div>
+                <p class="modelId" style="display:none;">Please select any model</p>
                 <img id="IconImage" src="" 
                      onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
                
@@ -749,8 +744,6 @@
 
                 //button.textContent = `Click count: ${event.detail}`;
             });
-                
-            
             </script>
         
 </body>
