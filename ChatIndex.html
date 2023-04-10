@@ -719,7 +719,7 @@
             <iframe id="iframeId" src="" style="display:none;"></iframe>
             
             <div class = "icon-bar" >
-                <p class="modelId" style="display:none;">Please select any model</p>
+                <div id="modelId1" style="display:none;">Please select any model</div>
                 <img id="IconImage" src="" 
                      onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
                
@@ -744,6 +744,11 @@
 
                 //button.textContent = `Click count: ${event.detail}`;
             });
+                
+            const mm = document.getElementById("modelId1");
+           mm.innerText = "OOO";
+           mm.style.display = "inline";
+                                                   
             </script>
         
 </body>
