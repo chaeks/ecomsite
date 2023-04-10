@@ -49,7 +49,6 @@
             }
             @keyframes hider{
                 0%   {opacity: 1;}
-                90%  {opacity: 1;}
                 100% {opacity: 0;}
             }
             
@@ -77,8 +76,9 @@
             border: 6px solid var(--brandColor);
             }
             }
-            .modelId{
-            display : none;
+            #modelId{
+                display : inline;
+                opacity : 0;
             }
             
             .embeddedServiceHelpButton .helpButton .uiButton {
@@ -704,9 +704,13 @@
                 console.log('bootstrap method call');
             }
             else{
-                document.querySelector('.modelId').style="display : inline; animation : hider 3s forwards;";
-                console.log('Dont Allow');
-                //document.querySelector('.modelId:after').style="display : none;";
+                
+                if (document.querySelector('#modelId').style.opacity == 0){
+                    document.querySelector('#modelId').style="animation : hider 3s forwards;";
+                    console.log('Dont Allow');
+                    //document.querySelector('.modelId:after').style="display : none;";
+                }
+                
             }
             
         }
@@ -719,7 +723,7 @@
             <iframe id="iframeId" src="" style="display:none;"></iframe>
             
             <div class = "icon-bar" >
-                <p class="modelId" style="display:none;">Please select any model</p>
+                <p id ="modelId">Please select any model</p>
                 <img id="IconImage" src="" 
                      onclick="bootstrapChat()" class="circle" style="display:none;" title="" />
                
