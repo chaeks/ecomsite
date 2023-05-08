@@ -113,6 +113,47 @@
             bottom : 14%;
             box-shadow:0 0 12px 0 rgb(0 0 0 / 50%);
             }  }
+            
+            
+            .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+            
         </style>
     </head>
     
@@ -276,6 +317,9 @@
         
 
         <div class = "icon-bar" >
+            <div class="tooltip">
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
             <img id="onlineImage" src= "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
                     onclick="bootstrapChat()" class="circle" style="display:none;" />
             <img id="offlineImage" src="https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/ChatBot" 
