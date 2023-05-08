@@ -308,8 +308,25 @@ border-bottom: 1px dotted black;
                 console.log('online method');
             }
             function bootstrapChat() {
-                embedded_svc.bootstrapEmbeddedService();
-                console.log('bootstrap method call');
+                var model ='';  //EventStory
+                if (model){
+                    embedded_svc.bootstrapEmbeddedService();
+                    console.log('bootstrap method call');
+                }
+                else{
+                    console.log('Block button');
+                    const modelMessage = document.getElementById("modelId1");
+
+                    const tooltipCss = document.getElementById("tooltip");
+
+                    modelMessage.style.display = "inline";
+                    tooltipCss.style.opacity = "1";
+
+                    setTimeout(function(){
+                        modelMessage.style.display = "none";
+                        tooltipCss.style.opacity = "0";
+                    },3000);
+                }
             }
         </script>
 
@@ -317,7 +334,7 @@ border-bottom: 1px dotted black;
         
 
         <div class = "icon-bar" >
-            <div class="tooltip">
+            <div class="tooltip" style="opacity:0;">
                 <span class="tooltiptext">Tooltip text</span>
             </div>
             <img id="onlineImage" src= "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
