@@ -320,11 +320,11 @@ border-bottom: 1px dotted black;
                     const tooltipCss = document.getElementsByClassName("tooltip");
 
                     //modelMessage.style.display = "inline";
-                    tooltipCss.style.opacity = "1";
+                    tooltipCss.style.display = "inline-block";
 
                     setTimeout(function(){
                         //modelMessage.style.display = "none";
-                        tooltipCss.style.opacity = "0";
+                        tooltipCss.style.display = "none";
                     },3000);
                 }
             }
@@ -334,7 +334,7 @@ border-bottom: 1px dotted black;
         
 
         <div class = "icon-bar" >
-            <div class="tooltip" style="opacity:0;">
+            <div class="tooltip" style="display:none;">
                 <span class="tooltiptext">Tooltip text</span>
             </div>
             <img id="onlineImage" src= "https://ckush-developer-edition.ap24.force.com/eShopExternalSite/resource/1654236944000/AvatarLogo" 
