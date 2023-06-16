@@ -308,7 +308,7 @@ border-bottom: 1px dotted black;
                 console.log('online method');
             }
             function bootstrapChat() {
-                var model ='';  //EventStory
+                var model ='ugi';  //EventStory
                 if (model){
                     embedded_svc.bootstrapEmbeddedService();
                     console.log('bootstrap method call');
@@ -321,11 +321,11 @@ border-bottom: 1px dotted black;
                     console.log('tool= '+ tooltipCss);
 
                     //modelMessage.style.display = "inline";
-                    //tooltipCss.style.display = "inline-block";
+                    tooltipCss.style.display = "inline-block";
 
                     setTimeout(function(){
                         //modelMessage.style.display = "none";
-                        //tooltipCss.style.display = "none";
+                        tooltipCss.style.display = "none";
                     },3000);
                 }
             }
