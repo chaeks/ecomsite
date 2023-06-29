@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+<style type='text/css'>
+        :root {
+        --brandColor : #000000;
+        --iconSize : 70px;
+        }
+        .icon-bar{
+        position : fixed;
+        top:82%;
+        right : 12px;
+        z-index: 1060;
+        -webkit-transform : translateY(-50%);
+        -ms-transform : translateY(-50%);
+        transform  : translateY(-50%);
+        }
+        .circle{
+        width : var(--iconSize);
+        height : var(--iconSize);
+        border-radius : 50%;
+        z-index: 1065;
+        box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
+        border: 6px solid var(--brandColor);
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days start*/
+        transition: all .2s ease-in-out;  
+        animation:grow 2s infinite;
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End*/
+        }
+        .circle:hover {
+        cursor: pointer;
+        }
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days start*/
+        @keyframes grow{
+        0% {transform: scale(1);}
+        50% {transform: scale(1.1);}
+        100% {transform: scale(1);}
+        }
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End*/
+
+        @media(max-width : 500px){
+        .circle{
+        height : var(--iconSize);
+        width:  var(--iconSize);
+        bottom : 14%;
+        z-index: 1065;
+        box-shadow: 0 0 12px 0 rgb(0 0 0 / 50%);
+        border: 6px solid var(--brandColor);
+        }
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: var(--brandColor);
+        font-family: "Arial", sans-serif;
+        width: var(--iconSize);
+        height:var(--iconSize);
+        border-radius: 50%;
+        min-width: 5em;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
+        display: none;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton .embeddedServiceIcon {
+        margin: auto;
+        }
+        .embeddedServiceHelpButton .embeddedServiceIcon::before {
+        font-size: 2.5em;
+        display: block;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid var(--brandColor);
+        min-width: 5em;
+        border-radius: 50%;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{        
+        font-family: "Arial", sans-serif;
+        border-radius: 50%;
+        min-width: 3.2em;
+        width: var(--iconSize) !important;
+        height:var(--iconSize) !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI .minimizedText {
+        display: none;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI .content{
+        padding:0 0px;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI{
+        width: var(--iconSize) !important;
+        height:var(--iconSize)  !important;
+        border-radius: 10%;
+        min-width: 7em;
+        }
+        .message{
+        padding: 1px 1px 1px 1px;
+        margin: 0px 0px;
+        border-style: none;
+        }
+        .embeddedServiceIcon svg {
+        font-size: 2.2em !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI .messageContent{
+        min-width: 3.2em;
+        }
+        .cEShop_PreChat input.slds-input {
+        font-size: 13px !important;
+        border-radius: 4px !important;
+        padding: 0 12px 0 16px !important;
+        line-height: 30px !important;
+        width: 90% !important;
+        }
+        .cEShop_PreChat select.select {
+        font-size: 13px !important;
+        height: 32px !important;
+        }
+        .embeddedServiceHelpButton {
+        z-index: 1001;
+        }
+        .embeddedServiceHelpButton .helpButton {
+        bottom: 14% !important;
+        width: var(--iconSize) !important;
+        height:var(--iconSize)  !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI.helpButton{
+        bottom: 14% !important;
+        width: var(--iconSize) !important;
+        height:var(--iconSize)  !important;
+        }
+        .embeddedServiceSidebarMinimizedDefaultUI{
+        bottom: 14% !important;
+        width: var(--iconSize) !important;
+        height:var(--iconSize)  !important;
+        }
+
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start*/
+        .wave{
+        position: fixed;
+        text-align: center;
+        top: 0px; 
+        right: 0px;  
+        width: var(--iconSize);
+        height: var(--iconSize);
+        border-radius: 50%;
+        background-color: var(--brandColor);
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+        animation:Waveeffects 2s linear infinite;
+        }
+        @keyframes Waveeffects {
+        from {
+        opacity: 1;
+        }
+        to {
+        transform: scale(1.6);
+        opacity: 0;
+        }
+        }
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End*/
+
+        @media(max-width: 500px){
+        .circle{
+        height: var(--iconSize);
+        width: var(--iconSize);
+        }
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start*/
+        .wave{
+        height: var(--iconSize);
+        width: var(--iconSize);
+        }
+        /*To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End*/
+        }
+        @media print {
+        .noPrint ,.embeddedServiceHelpButton {
+        display:none;
+        }
+        }
+    </style>
+
+</head>
+<script>
+var tierOneURL       = window.location.href;         
+var tierOneSessionId = '';        
+var tierOneBrand     = 'Jeep';           
+var minimizeFlag = false;  //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days
+var hashEmail = '';  //EMC-76
+var visitorMessageCount = false; //EMC-76
+
+</script>
+
+    <script type='text/javascript'>
+        const colorMap = new Map();
+        colorMap.set('Jeep', '#ffba00');
+        colorMap.set('Ram', '#880d00');
+        colorMap.set('Dodge', '#d50000');
+        colorMap.set('Chrysler', '#063E77');
+        colorMap.set('Fiat', '#E70000');
+        colorMap.set('Wagoneer', '#15255D');
+        colorMap.set('Alfa Romeo', '#8F0C2C');
+
+        var brandColor;
+        for (const [key,value] of colorMap.entries()) {
+            if (key == tierOneBrand){
+                brandColor = value;
+            }
+        }
+        var r = document.querySelector(':root');
+        //var obj = {Jeep:'#ffba00',Ram:'#00FF00'};
+        r.style.setProperty('--brandColor', brandColor);
+    
+    </script>
+<body>
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+var initESW = function(gslbBaseURL) {
+    embedded_svc.settings.displayHelpButton = false; //Or false
+    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+    embedded_svc.settings.defaultMinimizedText  = 'Chat'; //(Defaults to Chat with an Expert)
+    embedded_svc.settings.disabledMinimizedText = 'Chat'; //(Defaults to Agent Offline)      
+    embedded_svc.settings.loadingText = 'Loading'; //(Defaults to Loading)
+    //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+    // Settings for Chat
+    //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+    // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+    // Returns a valid button ID.
+    //};
+    //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+    //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+    //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+    embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+    embedded_svc.settings.entryFeature = 'LiveAgent';
+    embedded_svc.settings.widgetHeight     = '520px';
+    embedded_svc.settings.autoOpenPostChat = true;
+    
+    <!-- Please avoid to make any changes in the below lines of code -->
+        var http_host = location.hostname;
+        var environments = http_host.split(".");
+        var environment = environments[0];
+
+        var LeadRecordTypeId = '01217000005YzLCAA0';
+        var ChatRequestRecordTypeId = '01217000005ak24AAA';
+        
+        embedded_svc.settings.extraPrechatFormDetails = [
+            { "label": "tierOneURL",                 "value": tierOneURL,                   "displayToAgent": false},
+            { "label": "tierOneBRAND",               "value": tierOneBrand,                 "displayToAgent": false},          
+            { "label": "tierOneSessionId",           "value": tierOneSessionId,             "displayToAgent": false},
+            { "label": "LeadRecordTypeId",         "value": LeadRecordTypeId,           "displayToAgent": false},
+            { "label": "ChatRequestRecordTypeId",  "value": ChatRequestRecordTypeId,    "displayToAgent": false},
+            { "label": "caseSourceCR",             "value": "Tier1",                    "displayToAgent": false},
+            { "label": "caseSubject",              "value": "Tier1 Inquiry",           "displayToAgent": false},
+            { "label": "caseDescription",          "value": "Tier1 Inquiry",           "displayToAgent": false},
+            { "label": "caseOrigin",               "value": "Chat",                     "displayToAgent": false},
+            { "label": "caseType",                 "value": "Regular",                  "displayToAgent": false},
+            { "label": "caseMarket",               "value": "USA",                      "displayToAgent": false},
+            { "label": "caseLOB",                  "value": "Marketplace",              "displayToAgent": false},
+            { "label": "caseStatus",               "value": "Closed",                   "displayToAgent": false},
+            { "label": "caseCloseReason",          "value": "Closed by System",         "displayToAgent": false},
+            { "label": "caseInboundOutbound",      "value": "Inbound",                  "displayToAgent": false},
+            { "label": "caseSource",               "value": "Customer",                 "displayToAgent": false},
+            { "label": "caseCloseSynopsis",        "value": "Tier1 chat case concluded by System",   "displayToAgent": false},
+            { "label": "caseSourceDetails",        "value": tierOneBrand,            "displayToAgent": false},
+            { "label": "tierOneValue",              "value": "Tier1",              	"displayToAgent": false},
+            {
+                "label": "Source details",
+                "value": "Tier1",
+                "transcriptFields":[ "CC_Source_details__c" ],
+                "displayToAgent":false
+            }          
+        ];
+    embedded_svc.settings.extraPrechatInfo = [
+        {
+            "entityName": "CC_ChatRequest__c",
+            "saveToTranscript":"CC_LiveTranscriptChatRequest__c",
+            "showOnCreate": true,
+            "entityFieldMaps": [
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerFirstName__c",
+                    "isExactMatch": false,
+                    "label": "First Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_Brand__c",
+                    "isExactMatch": false,
+                    "label": "tierOneBRAND"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerLastName__c",
+                    "isExactMatch": false,
+                    "label": "Last Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerEmail__c",
+                    "isExactMatch": false,
+                    "label": "Email 1"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerPhone__c",
+                    "isExactMatch": false,
+                    "label": "Phone Number Type 1"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "eShop_Reasonforcontact__c",
+                    "isExactMatch": false,
+                    "label": "Reason for contact"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "RecordTypeId",
+                    "isExactMatch": false,
+                    "label": "ChatRequestRecordTypeId"  
+                },                
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerSource__c",
+                    "isExactMatch": false,
+                    "label": "caseSourceCR"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "eShop_ChatSubmittedURL__c",
+                    "isExactMatch": false,
+                    "label": "tierOneURL"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "eShop_SessionId__c",
+                    "isExactMatch": false,
+                    "label": "tierOneSessionId"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CustomerComment__c",
+                    "isExactMatch": false,
+                    "label": "Comments"
+                }
+            ]
+        }, {
+            "entityName": "Lead",
+            "saveToTranscript":"LeadId",
+            "linkToEntityName": "CC_ChatRequest__c",
+            "linkToEntityField": "Lead__c",
+            "showOnCreate": true,
+            "entityFieldMaps": [
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "FirstName",
+                    "isExactMatch": false,
+                    "label": "First Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "LastName",
+                    "isExactMatch": false,
+                    "label": "Last Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": true,
+                    "fieldName": "Email",
+                    "isExactMatch": true,
+                    "label": "Email 1"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Phone",
+                    "isExactMatch": false,
+                    "label": "Phone Number Type 1"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "RecordTypeId",
+                    "isExactMatch": false,
+                    "label": "LeadRecordTypeId"                 
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "LeadSource",
+                    "isExactMatch": false,
+                    "label": "tierOneValue"                 
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_BrandInterest__c",
+                    "isExactMatch": false,
+                    "label": "caseSourceDetails"
+                }
+            ]
+        },{
+            "entityName": "Case",
+            "saveToTranscript":"CaseId",
+            "linkToEntityName": "CC_ChatRequest__c",
+            "linkToEntityField": "CC_Case__c",
+            "showOnCreate": true,
+            "entityFieldMaps": [
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Subject",
+                    "isExactMatch": false,
+                    "label": "caseSubject"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Description",
+                    "isExactMatch": false,
+                    "label": "caseDescription"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_ContactFirstName__c",
+                    "isExactMatch": false,
+                    "label": "First Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_ContactLastName__c",
+                    "isExactMatch": false,
+                    "label": "Last Name"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Origin",
+                    "isExactMatch": false,
+                    "label": "caseOrigin"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Type",
+                    "isExactMatch": false,
+                    "label": "caseType"  
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_Market__c",
+                    "isExactMatch": false,
+                    "label": "caseMarket"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_LOB__c",
+                    "isExactMatch": false,
+                    "label": "caseLOB"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Status",
+                    "isExactMatch": false,
+                    "label": "caseStatus"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_Case_Closure_Reason__c",
+                    "isExactMatch": false,
+                    "label": "caseCloseReason"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_Synopsis__c",
+                    "isExactMatch": false,
+                    "label": "caseCloseSynopsis"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_CaseSource__c",
+                    "isExactMatch": false,
+                    "label": "caseSource"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_InboundOutbound__c",
+                    "isExactMatch": false,
+                    "label": "caseInboundOutbound"
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "Source__c",
+                    "isExactMatch": false,
+                    "label": "tierOneValue" 
+                },
+                {
+                    "doCreate": true,
+                    "doFind": false,
+                    "fieldName": "CC_SourceDetails__c",
+                    "isExactMatch": false,
+                    "label": "caseSourceDetails" 
+                }
+            ]
+        },{
+            "entityName": "Contact",
+            "entityFieldMaps": [
+                {
+                    "doCreate": false,
+                    "doFind": false,
+                    "fieldName": "FirstName",
+                    "isExactMatch": false,
+                    "label": "First Name"
+                },
+                {
+                    "doCreate": false,
+                    "doFind": false,
+                    "fieldName": "LastName",
+                    "isExactMatch": false,
+                    "label": "Last Name"
+                },
+                {
+                    "doCreate": false,
+                    "doFind": false,
+                    "fieldName": "Email",
+                    "isExactMatch": false,
+                    "label": "Email 1"
+                },
+                {
+                    "doCreate": false,
+                    "doFind": false,
+                    "fieldName": "Phone",
+                    "isExactMatch": false,
+                    "label": "Phone Number Type 1"
+                }
+            ]
+        }];
+        embedded_svc.addEventHandler("onChatEstablished", function(data) {
+           
+        });
+                
+        embedded_svc.addEventHandler("onClickSubmitButton", function(data) {
+           
+        });
+        //new
+        embedded_svc.addEventHandler("onHelpButtonClick", function(data) {
+            
+        });
+        embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
+            
+        });
+        embedded_svc.addEventHandler("onChatEstablished", function(data) {
+            //Dont remove below 2 lines, this provided by SF team
+            const varStyle=document.getElementsByClassName("minimizedText");
+            varStyle[0].style.display='block';
+        });
+        embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
+            
+        });
+        embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
+            
+        });
+        embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
+           
+        });
+        //EMC-76 Start
+        embedded_svc.addEventHandler("onChasitorMessage", function(data) {
+            if (!visitorMessageCount){
+                visitorMessageCount = true; 
+            }
+        });
+        //EMC-76 End
+        embedded_svc.addEventHandler("onAgentMessage", function(data) {
+            //Dont remove below 2 lines, this provided by SF team
+            const varStyle=document.getElementsByClassName("minimizedText");
+            varStyle[0].style.display='block';
+            
+        });
+        embedded_svc.addEventHandler("onChatEndedByChatbot", function(data) {
+           
+        });        
+        embedded_svc.addEventHandler("afterMinimize", function(data) {
+            isSFChatInit    = 'Y';
+            //EMC-54 Start
+            document.querySelector('#IconImage').style="display : none;";
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
+            document.querySelector('.wave').style = "display:none;";
+            minimizeFlag = true;
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
+            //EMC-54 End
+        });
+        embedded_svc.addEventHandler("afterMaximize", function(data) {
+            isSFChatInit    = 'Y';
+            //EMC-54 Start
+            document.querySelector('#IconImage').style="display : none;";
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
+            document.querySelector('.wave').style = "display:none;";
+            minimizeFlag = true;
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
+            //EMC-54 End
+        });
+        embedded_svc.addEventHandler("afterDestroy", function(data) {
+            //Dont remove below 2 lines, this provided by SF team
+            const varStyle=document.getElementsByClassName("embeddedServiceIcon");
+            varStyle[0].style.display='block';
+            //EMC-54 Start
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
+            minimizeFlag = false; 
+            getHolidayList();
+            //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
+            //EMC-54 End
+            
+    
+        });
+    var http_host = location.hostname;
+    var environments = http_host.split(".");
+    var environment = environments[0];
+   
+    if (tierOneBrand == 'Jeep'){
+        embedded_svc.init(
+            'https://fcagroup--eshop.sandbox.my.salesforce.com',
+            'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+            gslbBaseURL,
+            '00D17000000ebj7',
+            'Tier1_Jeep',
+            {
+                baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+                deploymentId: '572170000008fss',
+                buttonId: '573170000008hWl',
+                baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001aREAQ_1889641efdc',
+                isOfflineSupportEnabled: false
+            }
+        );
+    }
+    else if (tierOneBrand == 'Ram'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Ram',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008ftl',
+				buttonId: '573170000008hX5',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001aqEAA_188dd9fc2dc',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+    else if (tierOneBrand == 'Dodge'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Dodge',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008ftb',
+				buttonId: '573170000008hXF',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001bFEAQ_188dddd9590',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+    else if (tierOneBrand == 'Chrysler'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Chrylser',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008ftg',
+				buttonId: '573170000008hXU',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001avEAA_188dda588ca',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+    else if (tierOneBrand == 'Fiat'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Fiat',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008fu0',
+				buttonId: '573170000008hXP',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001bAEAQ_188ddcfd559',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+    else if (tierOneBrand == 'Wagoneer'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Wagoneer',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008ftv',
+				buttonId: '573170000008hXA',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001b0EAA_188ddacb505',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+    else if (tierOneBrand == 'Alfa Romeo'){
+        embedded_svc.init(
+			'https://fcagroup--eshop.sandbox.my.salesforce.com',
+			'https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+			gslbBaseURL,
+			'00D17000000ebj7',
+			'Tier1_Alfa_Romeo',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572170000008ftq',
+				buttonId: '573170000008hXK',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1700000001b5EAA_188ddb0dd1f',
+				isOfflineSupportEnabled: false
+			}
+		);
+    }
+
+};
+var http_host = location.hostname;
+var environments = http_host.split(".");
+var environment = environments[0];
+
+if (!window.embedded_svc) {
+    var s = document.createElement('script');
+    s.setAttribute('src', 'https://fcagroup--eshop.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.onload = function() {
+        initESW(null);
+    };
+    document.body.appendChild(s);
+} else {
+    initESW('https://service.force.com');
+}
+
+window.addEventListener("message", function(event) {
+    if (event.data.name === "Marketplace_FormFilled") {
+      
+    }
+    
+    if (event.data.name === "Marketplace_EmailValue") {
+       
+    }
+    
+}, false);
+
+</script>
+    <div class = "icon-bar" >
+            <img id="IconImage" src="" 
+                 onclick="bootstrapChat()" class="circle" style="display:none;" title="" />  <!--style="display:none;" added To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days -->
+
+            <div class="wave" style="display:none;"></div>  <!--To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days -->
+    </div>
+
+    <script type='text/javascript'>
+        //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
+        function agentOffline(){
+            if (!minimizeFlag){  //Because on fast minimize giving wrong UI
+                document.querySelector('#IconImage').style="display : inline;";
+                document.querySelector('.wave').style = "display:none;";
+                document.querySelector('.circle').style = "animation: none;";
+            }
+        }
+        function agentOnline(){
+            if (!minimizeFlag){ //Because on fast minimize giving wrong UI
+                document.querySelector('#IconImage').style="display : inline;";
+                document.querySelector('.wave').style = "display:inline;";
+            }
+        }
+        //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
+        //EMC-54 Start
+        function bootstrapChat() {
+        embedded_svc.bootstrapEmbeddedService();
+        }
+        //EMC-54 end
+    
+        //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
+        //NOTE :  holidayList in "DD/MM" format (Christmas, New Year, Thanks Giving-Evaluated using thanksGivingDate method)
+        const holidayList = ["25/12", "01/01"];
+        /*thanksGivingDate method: used for evaluating thanks Giving Date of current Year*/
+        function thanksGivingDate(year) {  
+            var date = new Date(year, 10, 1);
+            while (date.getDay() !== 4) {
+                date.setDate(date.getDate() + 1);
+            }
+            date.setDate(date.getDate() + 21);
+            let mm = date.getMonth() + 1 ;
+            let dd = date.getDate();
+            const formattedToday = dd + '/' + mm;
+            holidayList.push(formattedToday);
+        }
+        /*getHolidayList method : used to show online/Offline image icon depending on Holiday, Working Hours, Working Days*/
+        function getHolidayList() {  
+            var today = new Date();
+            //convert to est
+            var estDate = new Date ( today.toLocaleString('en-US', {
+                timeZone: 'America/New_York',
+            }));
+            
+            //weekday  0==Sunday 1==Monday 2==Tuesday 3==Wednesday 4==Thurs 5==Friday 6==Sat
+            var dayOfWeek = estDate.getDay();   
+            let mm = estDate.getMonth() + 1;   
+            if (mm%10 == mm ){
+                mm = '0'+mm;
+            }
+            let dd = estDate.getDate();   
+            if (dd%10 == dd ){
+                dd = '0'+dd;
+            } 
+            const currentDate = dd + '/' + mm;
+            thanksGivingDate(estDate.getFullYear());
+            
+            if ((dayOfWeek != 0 && !holidayList.includes(currentDate))) {
+                if ((dayOfWeek == 6 && estDate.getHours() >= 9 && estDate.getHours() < 17) || (dayOfWeek != 6 && estDate.getHours() >= 8 && estDate.getHours() < 22)) {
+                    setTimeout(agentOnline, 2000);
+                } else {
+                    setTimeout(agentOffline, 2000);
+                }
+            } else {
+                setTimeout(agentOffline, 2000);
+            }
+        }
+        getHolidayList();    //To Show Chat icon on page load
+        //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
+    </script>
+    
+	<script type='text/javascript'>
+        document.querySelector('#IconImage').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/eShopExternalSite/resource/1675061636000/EshopChatImage";
+        document.querySelector('#IconImage').title = "Chat With "+ tierOneBrand;
+	</script>
+</body>
+</html>
